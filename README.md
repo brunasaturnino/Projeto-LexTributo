@@ -9,7 +9,9 @@ documentos com upload e busca inteligente, cálculo automático de tributos como
 CSLL, além de ferramentas de colaboração entre advogados por meio do compartilhamento de 
 processos e anotações. 
 
-Membros: ⁠Bruna Saturnino de Carvalho - 2023001921
-Ezequias Kluyvert de Oliveira Lemos - 2023038523
-Gustavo Amaral Bernardino - 2021432674
+   A plataforma será desenvolvida utilizando as tecnologias TypeScript, .NET e Next.js, visando uma arquitetura moderna, escalável e eficiente.
+
+Membros: ⁠Bruna Saturnino de Carvalho - 2023001921 (FrontEnd)
+Ezequias Kluyvert de Oliveira Lemos - 2023038523 (BackEnd)
+Gustavo Amaral Bernardino - 2021432674 (BackEnd)
 ⁠Rafael Araújo Magesty - 2022423415 ( FrontEnd)
