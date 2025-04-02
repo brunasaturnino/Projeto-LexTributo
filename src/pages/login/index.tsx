@@ -28,7 +28,9 @@ export default function LoginPage() {
               </TogglePassword>
             </PasswordWrapper>
     
-            <Button onClick={() => alert("Login")}>Entrar</Button>
+            <Button onClick={() =>{ alert("Login");
+              router.push("/processos");
+            }}>Entrar</Button>
             <Register onClick={() => router.push("/cadastro")}>Ainda não possui uma conta? Crie aqui.</Register>
           </Card>
         </Container>
