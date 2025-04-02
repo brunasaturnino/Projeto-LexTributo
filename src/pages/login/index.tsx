@@ -3,15 +3,15 @@ import { Button } from "../../components/Button";
 import logo from "../../assets/logo.png";
 import { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi"; // ícones de olho
-
+import { useRouter } from "next/router"; // 👈 Importa useRouter do Next.js
 
 
 
 export default function LoginPage() {
     const [showPassword, setShowPassword] = useState(false);
+    const router = useRouter(); // 👈 Usa o useRouter do Next.js
 
-
-    return (
+    return (  
         <Container>
           <Card>
           <img src={logo.src} alt="Logo" width={120} height={120} />
@@ -29,7 +29,7 @@ export default function LoginPage() {
             </PasswordWrapper>
     
             <Button onClick={() => alert("Login")}>Entrar</Button>
-            <Register>Ainda não possui uma conta? Crie aqui.</Register>
+            <Register onClick={() => router.push("/cadastro")}>Ainda não possui uma conta? Crie aqui.</Register>
           </Card>
         </Container>
       );
