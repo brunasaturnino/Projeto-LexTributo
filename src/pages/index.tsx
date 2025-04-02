@@ -1,9 +1,12 @@
-import { Button } from "../components/Button";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function Home() {
-  return (
-    <div style={{ padding: "2rem" }}>
-      <Button onClick={() => alert(" Sistema testado!")}>Testar sistema</Button>
-    </div>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace("/login");
+  }, [router]);
+
+  return null;
 }

@@ -16,6 +16,8 @@ const StyledButton = styled.button<{ variant: string }>`
   padding: 0 16px;
   border: none;
   cursor: pointer;
+  width: 100%; /* ocupa toda a largura do container */
+
 
   ${({ variant }) => variant === "filled" && css`
     background-color: #f9a006;
