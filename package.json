@@ -1,0 +1,20 @@
+{
+  "name": "projeto-lextributo",
+  "version": "1.0.0",
+  "description": "O LexTributo é uma plataforma web voltada para advogados tributaristas, com o objetivo de otimizar a \r gestão de processos tributários, documentos e prazos legais. A solução busca centralizar informações, \r automatizar tarefas repetitivas e reduzir riscos operacionais, como a perda de prazos. Entre suas\r principais funcionalidades estão o cadastro e acompanhamento de processos com integração à API do\r CNJ (DataJud), agenda com notificações automáticas via Google Calendar e WhatsApp, central de\r documentos com upload e busca inteligente, cálculo automático de tributos como ICMS, ISS, IRPJ e\r CSLL, além de ferramentas de colaboração entre advogados por meio do compartilhamento de \r processos e anotações.",
+  "main": "index.js",
+ "scripts": {
+  "start": "lite-server",
+  "build": "tsc",
+  "dev": "nodemon"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.6.1",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}
