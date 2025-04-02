@@ -3,10 +3,12 @@ import { Button } from "../../components/Button";
 import logo from "../../assets/logo.png";
 import { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import { useRouter } from "next/router";
 
 export default function RegisterPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const router = useRouter();
 
   return (
     <Container>
@@ -36,8 +38,10 @@ export default function RegisterPage() {
           </TogglePassword>
         </PasswordWrapper>
 
-        <Button onClick={() => alert("Conta criada!")}>Cadastrar</Button>
-        <Register>Já possui uma conta? Faça login.</Register>
+        <Button onClick={() =>{ alert("Conta criada!");
+            router.push("/login");
+        }}>Cadastrar</Button>
+        <Register onClick={() => router.push("/login")}>Já possui uma conta? Faça login.</Register>
       </Card>
     </Container>
   );
