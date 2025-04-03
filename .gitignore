@@ -3,9 +3,9 @@
 ################################################################################
 
 /.vs
-node_modules/
-.next/
-dist/
-out/
+/front-end/node_modules/
+/front-end/.next/
+/front-end/dist/
+/front-end/out/
 *.log
 .env*
