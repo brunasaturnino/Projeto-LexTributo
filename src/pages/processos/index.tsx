@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
-import { Container, Title, Table, ActionButton } from "./styles";
+import { Container, Header, Title, SearchInput, Table, ActionIcon, AddButton } from "./styles";
+import { FiTrash2, FiFileText, FiPlus, FiSearch } from "react-icons/fi";
 
 interface Processo {
   id: string;
-  numero: string;
-  autor: string;
-  reu: string;
-  tribunal: string;
-  status: string;
+  nome: string;
 }
 
 export default function ProcessosPage() {
@@ -15,73 +12,55 @@ export default function ProcessosPage() {
 
   useEffect(() => {
     setProcessos([
-      {
-        id: "1",
-        numero: "0001234-56.2023.8.26.0000",
-        autor: "Empresa X",
-        reu: "Fazenda Pública",
-        tribunal: "TJ-SP",
-        status: "Em andamento",
-      },
-      {
-        id: "2",
-        numero: "0007890-12.2024.4.01.0000",
-        autor: "João da Silva",
-        reu: "União Federal",
-        tribunal: "TRF-1",
-        status: "Arquivado",
-      },
+      { id: "1", nome: "Processo 1" },
+      { id: "2", nome: "Processo 2" },
+      { id: "3", nome: "Processo 3" },
+      { id: "4", nome: "Processo 4" },
+      { id: "5", nome: "Processo 5" },
+      { id: "6", nome: "Processo 6" },
+      { id: "7", nome: "Processo 7" },
+      { id: "8", nome: "Processo 8" },
+      { id: "9", nome: "Processo 9" },
     ]);
   }, []);
 
   return (
     <Container>
-      <Title>Meus Processos</Title>
+      <Header>
+        <Title>Processos</Title>
+        <div style={{ position: "relative", width: "300px" }}>
+          <FiSearch style={{ position: "absolute", top: "12px", left: "10px", color: "#aaa" }} />
+          <SearchInput placeholder="Buscar" />
+        </div>
+      </Header>
+
       <Table>
         <thead>
           <tr>
-            <th>Número</th>
-            <th>Autor</th>
-            <th>Réu</th>
-            <th>Tribunal</th>
-            <th>Status</th>
-            <th>Ações</th>
+            <th>Nome</th>
+            <th style={{ textAlign: "right" }}>Ações</th>
           </tr>
         </thead>
         <tbody>
           {processos.map((p) => (
             <tr key={p.id}>
-              <td>{p.numero}</td>
-              <td>{p.autor}</td>
-              <td>{p.reu}</td>
-              <td>{p.tribunal}</td>
-              <td>{p.status}</td>
-              <td>
-                <ActionButton
-                  $variant="primary"
-                  onClick={() => alert(`Visualizar ${p.numero}`)}
-                >
-                  Visualizar
-                </ActionButton>
-
-                <ActionButton
-                  $variant="success"
-                  onClick={() => alert(`Compartilhar ${p.numero}`)}
-                >
-                  Compartilhar
-                </ActionButton>
-
-                <ActionButton
-                  $variant="danger"
-                  onClick={() => alert(`Excluir ${p.numero}`)}
-                >
-                  Excluir
-                </ActionButton>
+              <td>{p.nome}</td>
+              <td style={{ textAlign: "right" }}>
+                <ActionIcon onClick={() => alert(`Excluir ${p.nome}`)}>
+                  <FiTrash2 />
+                </ActionIcon>
+                <ActionIcon onClick={() => alert(`Visualizar ${p.nome}`)} gray>
+                  <FiFileText />
+                </ActionIcon>
               </td>
             </tr>
           ))}
         </tbody>
       </Table>
+
+      <AddButton onClick={() => alert("Novo processo")}>
+        <FiPlus />
+      </AddButton>
     </Container>
   );
 }
