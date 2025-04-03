@@ -11,3 +11,6 @@
 .env*
 /back-end/LexTributo.Api/obj
 /back-end/.vs
+/back-end/LexTributo.Application/obj
+/back-end/LexTributo.Api/.vs/LexTributo.Api/FileContentIndex
+/back-end/LexTributo.Api/.vs/LexTributo.Api/v17
