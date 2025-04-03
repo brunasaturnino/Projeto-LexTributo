@@ -10,7 +10,7 @@ export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 `;
 
 export const Title = styled.h1`
@@ -74,3 +74,44 @@ export const AddButton = styled.button`
     transform: scale(1.1);
   }
 `;
+
+export const Card = styled.div`
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+`;
+
+export const InfoRow = styled.div`
+  display: flex;
+  margin-bottom: 1rem;
+`;
+
+export const Label = styled.span`
+  font-weight: 600;
+  width: 120px;
+  color: #444;
+`;
+
+export const Value = styled.span`
+  color: #222;
+`;
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+`;
+
+
+export const Input = styled.input`
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+`;
+
+
