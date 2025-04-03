@@ -9,3 +9,5 @@
 /front-end/out/
 *.log
 .env*
+/back-end/LexTributo.Api/obj
+/back-end/.vs
