@@ -14,3 +14,5 @@
 /back-end/LexTributo.Application/obj
 /back-end/LexTributo.Api/.vs/LexTributo.Api/FileContentIndex
 /back-end/LexTributo.Api/.vs/LexTributo.Api/v17
+/back-end/LexTributo.Domain/obj
+/back-end/LexTributo.Infrastructure/obj
