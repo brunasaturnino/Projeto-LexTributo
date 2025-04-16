@@ -18,6 +18,12 @@ export const Title = styled.h1`
   color: #e60000;
 `;
 
+export const SearchWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+`;
+
 export const SearchInput = styled.input`
   padding: 0.6rem 0.6rem 0.6rem 2.2rem;
   border: none;
@@ -47,6 +53,22 @@ export const Table = styled.table`
   }
 `;
 
+export const SortButton = styled.button`
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+`;
+
 export const ActionIcon = styled.button<{ gray?: boolean }>`
   background: none;
   border: none;
@@ -61,13 +83,10 @@ export const ActionIcon = styled.button<{ gray?: boolean }>`
 `;
 
 export const AddButton = styled.button`
-  position: fixed;
-  top: 2rem;
-  right: 2rem;
   background: none;
   border: none;
   color: #e60000;
-  font-size: 2rem;
+  font-size: 1.8rem;
   cursor: pointer;
 
   &:hover {
@@ -106,7 +125,6 @@ export const Form = styled.form`
   border-radius: 12px;
 `;
 
-
 export const Input = styled.input`
   padding: 0.6rem;
   border-radius: 8px;
@@ -114,4 +132,15 @@ export const Input = styled.input`
   font-size: 1rem;
 `;
 
+export const CardWrapper = styled.div`
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+`;
 
+export const TableHeaderRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+`;
