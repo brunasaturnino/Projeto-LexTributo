@@ -144,3 +144,23 @@ export const TableHeaderRow = styled.div`
   align-items: center;
   margin-bottom: 1rem;
 `;
+
+export const StatusFilter = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+`;
+
+export const StatusOption = styled.button<{ active?: boolean }>`
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background-color: ${({ active }) => (active ? "#e60000" : "#efefef")};
+  color: ${({ active }) => (active ? "white" : "#333")};
+  cursor: pointer;
+  font-size: 0.9rem;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;

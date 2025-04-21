@@ -12,6 +12,8 @@ import {
   SearchWrapper,
   CardWrapper,
   TableHeaderRow,
+  StatusFilter,
+  StatusOption,
 } from "./styles";
 import {
   FiTrash2,
@@ -31,8 +33,9 @@ interface Processo {
 export default function ProcessosPage() {
   const [processos, setProcessos] = useState<Processo[]>([]);
   const [busca, setBusca] = useState("");
-  const [colunaOrdenada, setColunaOrdenada] = useState<"nome" | "status">("nome");
+  const [colunaOrdenada, setColunaOrdenada] = useState<"nome">("nome"); // agora só nome
   const [ordemAscendente, setOrdemAscendente] = useState(true);
+  const [filtroStatus, setFiltroStatus] = useState<string>(""); // "" = todos
   const router = useRouter();
 
   useEffect(() => {
@@ -41,40 +44,27 @@ export default function ProcessosPage() {
       { id: "2", nome: "Processo 2", status: "Concluído" },
       { id: "3", nome: "Processo 3", status: "Pendente" },
       { id: "4", nome: "Processo 4", status: "Arquivado" },
-
     ]);
   }, []);
 
-  const handleOrdenar = (coluna: "nome" | "status") => {
-    if (colunaOrdenada === coluna) {
-      setOrdemAscendente(!ordemAscendente);
-    } else {
-      setColunaOrdenada(coluna);
-      setOrdemAscendente(true); // começa crescente na nova coluna
-    }
+  // Ordenação apenas por nome
+  const handleOrdenarNome = () => {
+    setOrdemAscendente(!ordemAscendente);
   };
 
   const processosFiltrados = processos
-    .filter((p) => p.nome.toLowerCase().includes(busca.toLowerCase()))
-    .sort((a, b) => {
-      if (colunaOrdenada === "nome") {
-        return ordemAscendente
-          ? a.nome.localeCompare(b.nome)
-          : b.nome.localeCompare(a.nome);
-      } else {
-        const prioridade: Record<string, number> = {
-          "Concluído": 3,
-          "Em andamento": 1,
-          "Pendente": 2,
-          "Arquivado" : 4,
-        };
-    
-        const valorA = prioridade[a.status] ?? 99;
-        const valorB = prioridade[b.status] ?? 99;
-    
-        return ordemAscendente ? valorA - valorB : valorB - valorA;
-      }
-    });
+    // filtrar por nome
+    .filter(p => p.nome.toLowerCase().includes(busca.toLowerCase()))
+    // filtrar por status
+    .filter(p => !filtroStatus || p.status === filtroStatus)
+    // ordenar por nome
+    .sort((a, b) =>
+      ordemAscendente
+        ? a.nome.localeCompare(b.nome)
+        : b.nome.localeCompare(a.nome)
+    );
+
+  const todosStatuses = ["", "Em andamento", "Pendente", "Concluído", "Arquivado"];
 
   return (
     <Container>
@@ -86,47 +76,46 @@ export default function ProcessosPage() {
         <TableHeaderRow>
           <SearchWrapper>
             <FiSearch
-              style={{
-                position: "absolute",
-                top: "12px",
-                left: "10px",
-                color: "#aaa",
-              }}
+              style={{ position: "absolute", top: 12, left: 10, color: "#aaa" }}
             />
             <SearchInput
               placeholder="Buscar"
               value={busca}
-              onChange={(e) => setBusca(e.target.value)}
+              onChange={e => setBusca(e.target.value)}
             />
           </SearchWrapper>
-
           <AddButton onClick={() => alert("Novo processo")}>
             <FiPlus />
           </AddButton>
         </TableHeaderRow>
 
+        {/* filtro por status */}
+        <StatusFilter>
+          {todosStatuses.map(status => (
+            <StatusOption
+              key={status || "todos"}
+              active={filtroStatus === status}
+              onClick={() => setFiltroStatus(status)}
+            >
+              {status || "Todos"}
+            </StatusOption>
+          ))}
+        </StatusFilter>
+
         <Table>
           <thead>
             <tr>
               <th>
-                <SortButton onClick={() => handleOrdenar("nome")}>
-                  Nome{" "}
-                  {colunaOrdenada === "nome" &&
-                    (ordemAscendente ? <FiChevronUp /> : <FiChevronDown />)}
+                <SortButton onClick={handleOrdenarNome}>
+                  Nome {ordemAscendente ? <FiChevronUp /> : <FiChevronDown />}
                 </SortButton>
               </th>
-              <th>
-                <SortButton onClick={() => handleOrdenar("status")}>
-                  Status{" "}
-                  {colunaOrdenada === "status" &&
-                    (ordemAscendente ? <FiChevronUp /> : <FiChevronDown />)}
-                </SortButton>
-              </th>
+              <th>Status</th>
               <th style={{ textAlign: "right" }}>Ações</th>
             </tr>
           </thead>
           <tbody>
-            {processosFiltrados.map((p) => (
+            {processosFiltrados.map(p => (
               <tr key={p.id}>
                 <td
                   onClick={() => router.push(`/processos/${p.id}`)}
