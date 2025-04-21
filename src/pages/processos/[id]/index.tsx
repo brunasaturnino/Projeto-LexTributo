@@ -35,7 +35,7 @@ export default function DetalhesProcesso() {
         autor: "João da Silva",
         reu: "União Federal",
         tribunal: "TRF-1",
-        status: "Arquivado",
+        status: "Concluído",
       },
       {
         id: "3",
@@ -43,7 +43,15 @@ export default function DetalhesProcesso() {
         autor: "Maria Oliveira",
         reu: "Estado de Minas Gerais",
         tribunal: "TJ-MG",
-        status: "Concluído",
+        status: "Pendente",
+      },
+      {
+        id: "4",
+        nome: "Processo 4",
+        autor: "Empresa Z",
+        reu: "Fazenda Pública",
+        tribunal: "TJ-RS",
+        status: "Arquivado",
       },
     ];
 
