@@ -1,12 +1,434 @@
 {
   "Version": 1,
-  "Hash": "YHpaKJmvVFj0dd2ywy9d/vXkDlAttU2O4iIbU1YY9h0=",
+  "Hash": "BtFre2r+jOakZkDkbaTRw0Cv4plhe95EKf0cbVTYat0=",
   "Source": "back-end",
   "BasePath": "_content/back-end",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "back-end\\wwwroot",
+      "Source": "back-end",
+      "ContentRoot": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\",
+      "BasePath": "_content/back-end",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\documentos\\ad9b9e9d-5508-4935-8587-31da00a5c6f1.txt",
+      "SourceId": "back-end",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\",
+      "BasePath": "_content/back-end",
+      "RelativePath": "documentos/ad9b9e9d-5508-4935-8587-31da00a5c6f1#[.{fingerprint}]?.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5ipweew5fc",
+      "Integrity": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\documentos\\ad9b9e9d-5508-4935-8587-31da00a5c6f1.txt"
+    },
+    {
+      "Identity": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\documentos\\cc949f67-0a4a-455c-ac7a-37fe2f048289.jpg",
+      "SourceId": "back-end",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\",
+      "BasePath": "_content/back-end",
+      "RelativePath": "documentos/cc949f67-0a4a-455c-ac7a-37fe2f048289#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "s8kwnnx0q5",
+      "Integrity": "fHHI25W4Ez59hCb0lg5fHTfeRXy59TJsAwj52SXTnfI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\documentos\\cc949f67-0a4a-455c-ac7a-37fe2f048289.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\documentos\\ec0ff558-3227-4079-85d0-ec768e177f09.jpg",
+      "SourceId": "back-end",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\",
+      "BasePath": "_content/back-end",
+      "RelativePath": "documentos/ec0ff558-3227-4079-85d0-ec768e177f09#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9t50dwizh2",
+      "Integrity": "bao8uhOou0cvp4129HIDwZ7Lo3a6lxRVj5BILQD0v4g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\documentos\\ec0ff558-3227-4079-85d0-ec768e177f09.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\documentos\\fba401a6-7b27-4ba1-abd6-87207c78601f.txt",
+      "SourceId": "back-end",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\",
+      "BasePath": "_content/back-end",
+      "RelativePath": "documentos/fba401a6-7b27-4ba1-abd6-87207c78601f#[.{fingerprint}]?.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5ipweew5fc",
+      "Integrity": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\documentos\\fba401a6-7b27-4ba1-abd6-87207c78601f.txt"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "documentos/ad9b9e9d-5508-4935-8587-31da00a5c6f1.5ipweew5fc.txt",
+      "AssetFile": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\documentos\\ad9b9e9d-5508-4935-8587-31da00a5c6f1.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 17:13:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ipweew5fc"
+        },
+        {
+          "Name": "label",
+          "Value": "documentos/ad9b9e9d-5508-4935-8587-31da00a5c6f1.txt"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
+      "Route": "documentos/ad9b9e9d-5508-4935-8587-31da00a5c6f1.txt",
+      "AssetFile": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\documentos\\ad9b9e9d-5508-4935-8587-31da00a5c6f1.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 17:13:28 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
+      "Route": "documentos/cc949f67-0a4a-455c-ac7a-37fe2f048289.jpg",
+      "AssetFile": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\documentos\\cc949f67-0a4a-455c-ac7a-37fe2f048289.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1860845"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fHHI25W4Ez59hCb0lg5fHTfeRXy59TJsAwj52SXTnfI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 18:54:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fHHI25W4Ez59hCb0lg5fHTfeRXy59TJsAwj52SXTnfI="
+        }
+      ]
+    },
+    {
+      "Route": "documentos/cc949f67-0a4a-455c-ac7a-37fe2f048289.s8kwnnx0q5.jpg",
+      "AssetFile": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\documentos\\cc949f67-0a4a-455c-ac7a-37fe2f048289.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1860845"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fHHI25W4Ez59hCb0lg5fHTfeRXy59TJsAwj52SXTnfI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 18:54:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "s8kwnnx0q5"
+        },
+        {
+          "Name": "label",
+          "Value": "documentos/cc949f67-0a4a-455c-ac7a-37fe2f048289.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fHHI25W4Ez59hCb0lg5fHTfeRXy59TJsAwj52SXTnfI="
+        }
+      ]
+    },
+    {
+      "Route": "documentos/ec0ff558-3227-4079-85d0-ec768e177f09.9t50dwizh2.jpg",
+      "AssetFile": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\documentos\\ec0ff558-3227-4079-85d0-ec768e177f09.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2321191"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bao8uhOou0cvp4129HIDwZ7Lo3a6lxRVj5BILQD0v4g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 18:55:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9t50dwizh2"
+        },
+        {
+          "Name": "label",
+          "Value": "documentos/ec0ff558-3227-4079-85d0-ec768e177f09.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-bao8uhOou0cvp4129HIDwZ7Lo3a6lxRVj5BILQD0v4g="
+        }
+      ]
+    },
+    {
+      "Route": "documentos/ec0ff558-3227-4079-85d0-ec768e177f09.jpg",
+      "AssetFile": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\documentos\\ec0ff558-3227-4079-85d0-ec768e177f09.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2321191"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"bao8uhOou0cvp4129HIDwZ7Lo3a6lxRVj5BILQD0v4g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 18:55:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-bao8uhOou0cvp4129HIDwZ7Lo3a6lxRVj5BILQD0v4g="
+        }
+      ]
+    },
+    {
+      "Route": "documentos/fba401a6-7b27-4ba1-abd6-87207c78601f.5ipweew5fc.txt",
+      "AssetFile": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\documentos\\fba401a6-7b27-4ba1-abd6-87207c78601f.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 17:11:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ipweew5fc"
+        },
+        {
+          "Name": "label",
+          "Value": "documentos/fba401a6-7b27-4ba1-abd6-87207c78601f.txt"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
+      "Route": "documentos/fba401a6-7b27-4ba1-abd6-87207c78601f.txt",
+      "AssetFile": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\documentos\\fba401a6-7b27-4ba1-abd6-87207c78601f.txt",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 22 Apr 2025 17:11:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    }
+  ]
 }

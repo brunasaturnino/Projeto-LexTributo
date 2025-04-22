@@ -7,6 +7,9 @@ namespace back_end.Models
         public string Username { get; set; } = null!;
         public string Password { get; set; } = null!;
     }
+
+
+
     public class UserWithRoleDto: IValidatableObject
     {
         public string Username { get; set; } = null!;
@@ -24,5 +27,14 @@ namespace back_end.Models
                     new[] { nameof(Role) });
             }
         }
+    }
+
+
+
+    public class UserResponseDto
+    {
+        public Guid Id { get; set; }
+        public string Username { get; set; } = null!;
+        public string Role { get; set; } = null!;
     }
 }
