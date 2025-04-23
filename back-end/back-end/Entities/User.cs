@@ -7,5 +7,8 @@
         public string PasswordHash { get; set; } = string.Empty;
         public string Role { get; set; } = string.Empty;
 
+        // Relação com PROCESSO
+        public ICollection<Processo> Processos { get; set; } = new List<Processo>();
+
     }
 }

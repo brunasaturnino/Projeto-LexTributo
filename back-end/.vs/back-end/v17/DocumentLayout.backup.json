@@ -1,42 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\back-end\\",
+  "WorkspaceRootPath": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\back-end\\back-end\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\entities\\processo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\entities\\processo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\back-end\\back-end\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\models\\processodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\models\\processodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\back-end\\back-end\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\services\\processoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\services\\processoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\back-end\\back-end\\models\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\models\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\controllers\\processocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\controllers\\processocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\back-end\\back-end\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\back-end\\back-end\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\back-end\\back-end\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\back-end\\back-end\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\back-end\\back-end\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\services\\interfaces\\iprocessoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\services\\interfaces\\iprocessoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,119 +42,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\back-end\\back-end\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "back-end\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\back-end\\back-end\\Properties\\launchSettings.json",
-              "RelativeToolTip": "back-end\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-21T00:04:27.504Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\back-end\\back-end\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "back-end\\Services\\AuthService.cs",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\back-end\\back-end\\Services\\AuthService.cs",
-              "RelativeToolTip": "back-end\\Services\\AuthService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAADwvwoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T20:01:20.509Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IAuthService.cs",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\back-end\\back-end\\Services\\IAuthService.cs",
-              "RelativeDocumentMoniker": "back-end\\Services\\IAuthService.cs",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\back-end\\back-end\\Services\\IAuthService.cs",
-              "RelativeToolTip": "back-end\\Services\\IAuthService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T20:00:22.673Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\back-end\\back-end\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "back-end\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\back-end\\back-end\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "back-end\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T19:28:45.763Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\back-end\\back-end\\appsettings.json",
-              "RelativeDocumentMoniker": "back-end\\appsettings.json",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\back-end\\back-end\\appsettings.json",
-              "RelativeToolTip": "back-end\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-20T19:15:29.336Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\back-end\\back-end\\Program.cs",
-              "RelativeDocumentMoniker": "back-end\\Program.cs",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\back-end\\back-end\\Program.cs",
-              "RelativeToolTip": "back-end\\Program.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T18:54:22.207Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\back-end\\back-end\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "back-end\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\back-end\\back-end\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "back-end\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Title": "IProcessoService.cs",
+              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\Interfaces\\IProcessoService.cs",
+              "RelativeDocumentMoniker": "back-end\\Services\\Interfaces\\IProcessoService.cs",
+              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\Interfaces\\IProcessoService.cs",
+              "RelativeToolTip": "back-end\\Services\\Interfaces\\IProcessoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T18:44:52.271Z",
+              "WhenOpened": "2025-04-22T22:44:20.209Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "UserDto.cs",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\back-end\\back-end\\Models\\UserDto.cs",
-              "RelativeDocumentMoniker": "back-end\\Models\\UserDto.cs",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\back-end\\back-end\\Models\\UserDto.cs",
-              "RelativeToolTip": "back-end\\Models\\UserDto.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAsAAAAAAAAAA==",
+              "Title": "ProcessoController.cs",
+              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Controllers\\ProcessoController.cs",
+              "RelativeDocumentMoniker": "back-end\\Controllers\\ProcessoController.cs",
+              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Controllers\\ProcessoController.cs",
+              "RelativeToolTip": "back-end\\Controllers\\ProcessoController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAUwCwAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T18:43:17.079Z",
+              "WhenOpened": "2025-04-22T22:21:46.27Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\back-end\\back-end\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "back-end\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\back-end\\back-end\\Entities\\User.cs",
-              "RelativeToolTip": "back-end\\Entities\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAmAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ProcessoService.cs",
+              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\ProcessoService.cs",
+              "RelativeDocumentMoniker": "back-end\\Services\\ProcessoService.cs",
+              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\ProcessoService.cs",
+              "RelativeToolTip": "back-end\\Services\\ProcessoService.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAiwFcAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T18:40:19.062Z",
+              "WhenOpened": "2025-04-22T22:21:48.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProcessoDto.cs",
+              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Models\\ProcessoDto.cs",
+              "RelativeDocumentMoniker": "back-end\\Models\\ProcessoDto.cs",
+              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Models\\ProcessoDto.cs",
+              "RelativeToolTip": "back-end\\Models\\ProcessoDto.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAzwCUAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T22:19:25.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Processo.cs",
+              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Entities\\Processo.cs",
+              "RelativeDocumentMoniker": "back-end\\Entities\\Processo.cs",
+              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Entities\\Processo.cs",
+              "RelativeToolTip": "back-end\\Entities\\Processo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T21:16:12.022Z",
               "EditorCaption": ""
             }
           ]

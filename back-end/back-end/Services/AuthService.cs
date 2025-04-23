@@ -4,13 +4,14 @@ using System.Text;
 using back_end.Data;
 using back_end.Entities;
 using back_end.Models;
+using back_end.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 namespace back_end.Services
 {
-    public class AuthService(LexTributoDbContext context, IConfiguration configuration) : IAuthService
+    public class AuthService(AppDbContext context, IConfiguration configuration) : IAuthService
     {
         public async Task<User?> RegisterAsync(UserWithRoleDto request)
         {
@@ -30,6 +31,9 @@ namespace back_end.Services
 
             return user;
         }
+
+
+
         public async Task<string?> LoginAsync(UserDto request)
         {
             var user = await context.Users.FirstOrDefaultAsync(u => u.Username == request.Username);
@@ -44,6 +48,8 @@ namespace back_end.Services
 
             return token;
         }
+
+
 
         private string CreateToken(User user)
         {

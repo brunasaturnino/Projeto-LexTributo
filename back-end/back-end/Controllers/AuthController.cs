@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using back_end.Entities;
 using back_end.Models;
-using back_end.Services;
+using back_end.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -34,6 +34,8 @@ namespace back_end.Controllers
 
             return Ok(user);
         }
+        
+
 
         [HttpPost("login")]
         public async Task<ActionResult<string>> Login(UserDto request)
@@ -47,12 +49,15 @@ namespace back_end.Controllers
             return Ok(token);
         }
 
+
+
         [Authorize]
         [HttpGet("test-auth")]
         public IActionResult AuthenticatedOnlyEndpoint()
         {
             return Ok("You are authenticated");
         }
+
 
 
         [Authorize(Roles = "admin")]
