@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\entities\\processo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\entities\\processo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\models\\processodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\models\\processodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\services\\processoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\services\\processoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\controllers\\documentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\controllers\\documentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\controllers\\processocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\controllers\\processocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\services\\interfaces\\iprocessoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\services\\interfaces\\iprocessoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProcessoController.cs",
+              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Controllers\\ProcessoController.cs",
+              "RelativeDocumentMoniker": "back-end\\Controllers\\ProcessoController.cs",
+              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Controllers\\ProcessoController.cs",
+              "RelativeToolTip": "back-end\\Controllers\\ProcessoController.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T00:51:59.791Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}"
@@ -42,67 +43,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IProcessoService.cs",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\Interfaces\\IProcessoService.cs",
-              "RelativeDocumentMoniker": "back-end\\Services\\Interfaces\\IProcessoService.cs",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\Interfaces\\IProcessoService.cs",
-              "RelativeToolTip": "back-end\\Services\\Interfaces\\IProcessoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T22:44:20.209Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProcessoController.cs",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Controllers\\ProcessoController.cs",
-              "RelativeDocumentMoniker": "back-end\\Controllers\\ProcessoController.cs",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Controllers\\ProcessoController.cs",
-              "RelativeToolTip": "back-end\\Controllers\\ProcessoController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAUwCwAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T22:21:46.27Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProcessoService.cs",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\ProcessoService.cs",
-              "RelativeDocumentMoniker": "back-end\\Services\\ProcessoService.cs",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\ProcessoService.cs",
-              "RelativeToolTip": "back-end\\Services\\ProcessoService.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAiwFcAAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T22:21:48.068Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProcessoDto.cs",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Models\\ProcessoDto.cs",
-              "RelativeDocumentMoniker": "back-end\\Models\\ProcessoDto.cs",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Models\\ProcessoDto.cs",
-              "RelativeToolTip": "back-end\\Models\\ProcessoDto.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAzwCUAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T22:19:25.845Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Processo.cs",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Entities\\Processo.cs",
-              "RelativeDocumentMoniker": "back-end\\Entities\\Processo.cs",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Entities\\Processo.cs",
-              "RelativeToolTip": "back-end\\Entities\\Processo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAoAAAAAAAAAA==",
+              "Title": "DocumentoController.cs",
+              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Controllers\\DocumentoController.cs",
+              "RelativeDocumentMoniker": "back-end\\Controllers\\DocumentoController.cs",
+              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Controllers\\DocumentoController.cs",
+              "RelativeToolTip": "back-end\\Controllers\\DocumentoController.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAcwIIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T21:16:12.022Z",
+              "WhenOpened": "2025-04-23T00:52:00.073Z",
               "EditorCaption": ""
             }
           ]
