@@ -21,6 +21,7 @@ export const Card = styled.div`
 export const Title = styled.h1`
   color: red;
   margin-bottom: 1.5rem;
+  margin-top: 1rem;
 `;
 
 export const Input = styled.input`
@@ -39,8 +40,14 @@ export const Input = styled.input`
 export const Register = styled.p`
   font-size: 0.9rem;
   margin-top: 1.5rem;
-  color: red;
-  cursor: pointer;
+  color: #444; /* cor do texto neutro */
+  text-align: center;
+
+  span {
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+  }
 `;
 
 export const PasswordWrapper = styled.div`
@@ -55,7 +62,7 @@ export const TogglePassword = styled.button`
   transform: translateY(-50%);
   background: transparent;
   border: none;
-  color: red;
+  color: black;
   cursor: pointer;
 `;
 
@@ -63,7 +70,7 @@ export const TogglePassword = styled.button`
 export const ErrorMessage = styled.p`
   color:  red;
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   margin-top: -0.5rem;
   margin-bottom: 1rem;
   text-align: left;
