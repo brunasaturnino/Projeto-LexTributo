@@ -14,6 +14,7 @@ import {
   TableHeaderRow,
   StatusFilter,
   StatusOption,
+  CardLogout
 } from "./styles";
 import {
   FiTrash2,
@@ -22,6 +23,7 @@ import {
   FiSearch,
   FiChevronUp,
   FiChevronDown,
+  FiLogOut,
 } from "react-icons/fi";
 
 interface Processo {
@@ -66,10 +68,22 @@ export default function ProcessosPage() {
 
   const todosStatuses = ["", "Em andamento", "Pendente", "Concluído", "Arquivado"];
 
+  function handleLogout() {
+    // Exemplo simples: limpe tokens/sessão aqui se usar autenticação real
+    // localStorage.removeItem('token');
+    // window.location.href = "/login";
+    router.push("/login"); // só para simular logout agora
+  }
+
+
   return (
     <Container>
       <Header>
         <Title>Processos</Title>
+        <CardLogout onClick={handleLogout}>
+          <FiLogOut size={15} />
+          LogOut
+        </CardLogout>
       </Header>
 
       <CardWrapper>

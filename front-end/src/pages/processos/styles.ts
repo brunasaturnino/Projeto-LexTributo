@@ -164,3 +164,24 @@ export const StatusOption = styled.button<{ active?: boolean }>`
     opacity: 0.8;
   }
 `;
+
+export const CardLogout = styled.button`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: #e60000;
+  border: 1.5px solid #e60000;
+  border-radius: 10px;
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.06);
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    background: #ffeaea;
+    color: #b71c1c;
+  }
+`;
