@@ -12,6 +12,8 @@ import { Button } from "../../components/Button";
 import logo from "../../assets/logo.png";
 import { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import { useRouter } from "next/router";
+
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -19,6 +21,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const router = useRouter();
 
   const handleLogin = () => {
     let valid = true;
@@ -73,7 +76,7 @@ export default function LoginPage() {
         {passwordError && <ErrorMessage>{passwordError}</ErrorMessage>}
 
         <Button onClick={handleLogin}>Entrar</Button>
-        <Register>Ainda não possui uma conta? <span onClick={() => alert("Redirecionar para cadastro")}>Crie aqui.</span>.</Register>
+        <Register>Ainda não possui uma conta? <span onClick={() => router.push("/cadastro")}>Crie aqui.</span></Register>
       </Card>
     </Container>
   );
