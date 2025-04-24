@@ -58,3 +58,17 @@ export const TogglePassword = styled.button`
   color: red;
   cursor: pointer;
 `;
+
+
+export const ErrorMessage = styled.p`
+  color:  red;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
