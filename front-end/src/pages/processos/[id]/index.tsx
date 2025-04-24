@@ -1,6 +1,9 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { Container, Title, Card, InfoRow, Label, Header, Value } from "../styles";
+import { Container, Title, Card, InfoRow, Label, Header, Value, DocumentButton, CardDocumentRow} from "../styles";
+import { FiFilePlus } from "react-icons/fi";
+
+
 
 interface Processo {
   id: string;
@@ -93,6 +96,11 @@ export default function DetalhesProcesso() {
           <Label>Status:</Label>
           <Value>{processo.status}</Value>
         </InfoRow>
+        <CardDocumentRow>
+          <DocumentButton onClick={() => alert("Adicionar documentos ao processo")}>
+            <FiFilePlus size={20} />
+          </DocumentButton>
+        </CardDocumentRow>
       </Card>
     </Container>
   );

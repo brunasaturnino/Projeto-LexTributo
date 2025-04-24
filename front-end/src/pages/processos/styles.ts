@@ -185,3 +185,32 @@ export const CardLogout = styled.button`
     color: #b71c1c;
   }
 `;
+
+export const DocumentButton = styled.button`
+  display: flex;
+  align-items: center;
+  justifyContent: "flex-end";
+  gap: 8px;
+  background: #fff;
+  color: #e60000;
+  border: 1.5px solid #e60000;
+  border-radius: 10px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.06);
+  transition: background 0.2s, color 0.2s;
+  margin-top: 32px;
+
+  &:hover {
+    background: #ffeaea;
+    color: #b71c1c;
+  }
+`;
+
+export const CardDocumentRow = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+`;
