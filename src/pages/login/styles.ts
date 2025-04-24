@@ -39,8 +39,14 @@ export const Input = styled.input`
 export const Register = styled.p`
   font-size: 0.9rem;
   margin-top: 1.5rem;
-  color: red;
-  cursor: pointer;
+  color: black;
+  font-weight: bold;
+
+    span {
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+  }
 `;
 
 export const PasswordWrapper = styled.div`
@@ -55,6 +61,20 @@ export const TogglePassword = styled.button`
   transform: translateY(-50%);
   background: transparent;
   border: none;
-  color: red;
+  color: black;
   cursor: pointer;
 `;
+
+export const ErrorMessage = styled.p`
+  color:  red;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+
