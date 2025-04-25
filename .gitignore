@@ -17,3 +17,6 @@ Thumbs.db
 # Ambiente
 .env
 .env.local
+/.vs
+/back-end/.vs/back-end/FileContentIndex
+/back-end/back-end/obj/Release/net8.0
