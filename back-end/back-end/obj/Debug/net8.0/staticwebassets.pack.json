@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\documentos\\ad9b9e9d-5508-4935-8587-31da00a5c6f1.txt",
+      "PackagePath": "staticwebassets\\documentos\\ad9b9e9d-5508-4935-8587-31da00a5c6f1.txt"
+    },
+    {
+      "Id": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\documentos\\cc949f67-0a4a-455c-ac7a-37fe2f048289.jpg",
+      "PackagePath": "staticwebassets\\documentos\\cc949f67-0a4a-455c-ac7a-37fe2f048289.jpg"
+    },
+    {
+      "Id": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\documentos\\ec0ff558-3227-4079-85d0-ec768e177f09.jpg",
+      "PackagePath": "staticwebassets\\documentos\\ec0ff558-3227-4079-85d0-ec768e177f09.jpg"
+    },
+    {
+      "Id": "C:\\Users\\guama\\OneDrive\\Área de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\wwwroot\\documentos\\fba401a6-7b27-4ba1-abd6-87207c78601f.txt",
+      "PackagePath": "staticwebassets\\documentos\\fba401a6-7b27-4ba1-abd6-87207c78601f.txt"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.back-end.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.back-end.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.back-end.props",
+      "PackagePath": "build\\back-end.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.back-end.props",
+      "PackagePath": "buildMultiTargeting\\back-end.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.back-end.props",
+      "PackagePath": "buildTransitive\\back-end.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
