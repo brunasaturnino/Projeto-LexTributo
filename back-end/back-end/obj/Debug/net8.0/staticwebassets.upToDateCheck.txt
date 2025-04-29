@@ -1,4 +1,7 @@
+wwwroot\documentos\0a79774a-b563-4335-9147-73cb3a0896ad.jpg
 wwwroot\documentos\ad9b9e9d-5508-4935-8587-31da00a5c6f1.txt
 wwwroot\documentos\cc949f67-0a4a-455c-ac7a-37fe2f048289.jpg
+wwwroot\documentos\d87fd864-f4e7-43b3-95e2-69060cadda28.jpg
+wwwroot\documentos\e8fae476-0f31-418c-a6aa-a3f1fb254828.jpg
 wwwroot\documentos\ec0ff558-3227-4079-85d0-ec768e177f09.jpg
 wwwroot\documentos\fba401a6-7b27-4ba1-abd6-87207c78601f.txt

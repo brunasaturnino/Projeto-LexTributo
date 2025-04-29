@@ -16,8 +16,28 @@ namespace back_end.Services
         {
             _context = context;
         }
-        
-        
+
+
+        public async Task<User?> RegisterAsync(UserWithRoleDto request)
+        {
+            if (await _context.Users.AnyAsync(U => U.Username == request.Username))
+                return null;
+
+            var user = new User();
+            var hashedPassword = new PasswordHasher<User>()
+                .HashPassword(user, request.Password);
+
+            user.Username = request.Username;
+            user.PasswordHash = hashedPassword;
+            user.Role = request.Role;
+
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
+
+            return user;
+        }
+
+
         public async Task<IEnumerable<User>> ObterTodosUsersAsync()
         {
             return await _context.Users.ToListAsync();

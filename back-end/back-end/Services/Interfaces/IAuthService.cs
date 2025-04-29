@@ -5,7 +5,6 @@ namespace back_end.Services.Interfaces
 {
     public interface IAuthService
     {
-        Task<User?> RegisterAsync(UserWithRoleDto request);
         Task<string?> LoginAsync(UserDto request);
     }
 }

@@ -13,26 +13,6 @@ namespace back_end.Services
 {
     public class AuthService(AppDbContext context, IConfiguration configuration) : IAuthService
     {
-        public async Task<User?> RegisterAsync(UserWithRoleDto request)
-        {
-            if(await context.Users.AnyAsync(U => U.Username == request.Username))
-                return null;
-
-            var user = new User();
-            var hashedPassword = new PasswordHasher<User>()
-                .HashPassword(user, request.Password);
-
-            user.Username = request.Username;
-            user.PasswordHash = hashedPassword;
-            user.Role = request.Role;
-
-            context.Users.Add(user);
-            await context.SaveChangesAsync();
-
-            return user;
-        }
-
-
 
         public async Task<string?> LoginAsync(UserDto request)
         {

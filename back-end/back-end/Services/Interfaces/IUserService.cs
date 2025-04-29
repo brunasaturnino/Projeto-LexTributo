@@ -5,6 +5,7 @@ namespace back_end.Services.Interfaces
 {
     public interface IUserService
     {
+        Task<User?> RegisterAsync(UserWithRoleDto request);
         Task<IEnumerable<User>> ObterTodosUsersAsync();
         Task<User?> ObterUserPorIdAsync(Guid id);
         Task<bool> DeleteUserAsync(Guid id);
