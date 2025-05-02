@@ -20,3 +20,7 @@ Thumbs.db
 /.vs
 /back-end/.vs/back-end/FileContentIndex
 /back-end/back-end/obj/Release/net8.0
+
+# .NET build artifacts
+/back-end/back-end/bin/
+/back-end/back-end/obj/
