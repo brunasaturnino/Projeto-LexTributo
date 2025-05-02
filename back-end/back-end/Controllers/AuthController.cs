@@ -17,24 +17,7 @@ namespace back_end.Controllers
     [ApiController]
     public class AuthController(IAuthService authService) : ControllerBase
     {
-
-        [HttpPost("register")]
-        public async Task<ActionResult<User>> Register(UserWithRoleDto request)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-
-            var user = await authService.RegisterAsync(request);
-
-            if (user == null)
-            {
-                return BadRequest("Username already exists");
-            }
-
-            return Ok(user);
-        }
-        
+     
 
 
         [HttpPost("login")]

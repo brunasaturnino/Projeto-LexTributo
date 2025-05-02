@@ -5,6 +5,7 @@ using back_end.Models;
 using back_end.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using back_end.Services;
 
 namespace back_end.Controllers
 {
@@ -19,6 +20,22 @@ namespace back_end.Controllers
             _userService = userService;
         }
 
+        [HttpPost("register")]
+        public async Task<ActionResult<User>> Register(UserWithRoleDto request)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+
+            var user = await _userService.RegisterAsync(request);
+
+            if (user == null)
+            {
+                return BadRequest("Username already exists");
+            }
+
+            return Ok(user);
+        }
 
 
         [Authorize(Roles = "admin")]
