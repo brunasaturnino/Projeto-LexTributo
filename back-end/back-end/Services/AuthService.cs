@@ -14,9 +14,9 @@ namespace back_end.Services
     public class AuthService(AppDbContext context, IConfiguration configuration) : IAuthService
     {
 
-        public async Task<string?> LoginAsync(UserDto request)
+        public async Task<string?> LoginAsync(UserLoginDto request)
         {
-            var user = await context.Users.FirstOrDefaultAsync(u => u.Username == request.Username);
+            var user = await context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
 
             if (user is null)
                 return null;

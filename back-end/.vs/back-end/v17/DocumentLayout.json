@@ -3,36 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\controllers\\documentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\controllers\\documentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\controllers\\processocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\controllers\\processocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\models\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\models\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Migrations\\20250504135706_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:back-end\\Migrations\\20250504135706_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|c:\\users\\guama\\onedrive\\\u00E1rea de trabalho\\repositorios\\projeto-lextributo\\back-end\\back-end\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1EA4D96-02B6-46B2-B116-9A01E8D1CC4C}|back-end\\back-end.csproj|solutionrelative:back-end\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,86 +42,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "back-end\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\UserService.cs",
-              "RelativeToolTip": "back-end\\Services\\UserService.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAkwCIAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T23:00:12.898Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "back-end\\Services\\AuthService.cs",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\AuthService.cs",
-              "RelativeToolTip": "back-end\\Services\\AuthService.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T22:59:59.916Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "back-end\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Controllers\\UserController.cs",
-              "RelativeToolTip": "back-end\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB0AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T22:59:35.7Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "back-end\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "back-end\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T22:59:23.011Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\Interfaces\\IUserService.cs",
-              "RelativeDocumentMoniker": "back-end\\Services\\Interfaces\\IUserService.cs",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\Interfaces\\IUserService.cs",
-              "RelativeToolTip": "back-end\\Services\\Interfaces\\IUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T22:59:14.458Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IAuthService.cs",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\Interfaces\\IAuthService.cs",
-              "RelativeDocumentMoniker": "back-end\\Services\\Interfaces\\IAuthService.cs",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\Interfaces\\IAuthService.cs",
-              "RelativeToolTip": "back-end\\Services\\Interfaces\\IAuthService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T22:59:05.301Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}"
@@ -132,27 +54,106 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ProcessoController.cs",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Controllers\\ProcessoController.cs",
-              "RelativeDocumentMoniker": "back-end\\Controllers\\ProcessoController.cs",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Controllers\\ProcessoController.cs",
-              "RelativeToolTip": "back-end\\Controllers\\ProcessoController.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "back-end\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\AuthService.cs",
+              "RelativeToolTip": "back-end\\Services\\AuthService.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBIAAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T00:51:59.791Z"
+              "WhenOpened": "2025-05-04T14:08:35.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "back-end\\Services\\Interfaces\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "back-end\\Services\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T14:08:25.143Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "back-end\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Controllers\\AuthController.cs*",
+              "RelativeToolTip": "back-end\\Controllers\\AuthController.cs*",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB8AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T14:01:19.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20250504135706_Initial.cs",
+              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Migrations\\20250504135706_Initial.cs",
+              "RelativeDocumentMoniker": "back-end\\Migrations\\20250504135706_Initial.cs",
+              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Migrations\\20250504135706_Initial.cs",
+              "RelativeToolTip": "back-end\\Migrations\\20250504135706_Initial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T13:57:06.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Models\\UserDto.cs",
+              "RelativeDocumentMoniker": "back-end\\Models\\UserDto.cs",
+              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Models\\UserDto.cs",
+              "RelativeToolTip": "back-end\\Models\\UserDto.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAswC4AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T13:53:32.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "back-end\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Services\\UserService.cs",
+              "RelativeToolTip": "back-end\\Services\\UserService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwB4AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T13:53:38.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Entities\\User.cs",
+              "RelativeDocumentMoniker": "back-end\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Entities\\User.cs",
+              "RelativeToolTip": "back-end\\Entities\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-04T13:53:28.636Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "DocumentoController.cs",
-              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Controllers\\DocumentoController.cs",
-              "RelativeDocumentMoniker": "back-end\\Controllers\\DocumentoController.cs",
-              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Controllers\\DocumentoController.cs",
-              "RelativeToolTip": "back-end\\Controllers\\DocumentoController.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAcwIIAAAAAAAAAAAAAAA==",
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "back-end\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\guama\\OneDrive\\\u00C1rea de Trabalho\\REPOSITORIOS\\Projeto-LexTributo\\back-end\\back-end\\Controllers\\UserController.cs",
+              "RelativeToolTip": "back-end\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAcwEoAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T00:52:00.073Z",
+              "WhenOpened": "2025-05-04T13:53:15.151Z",
               "EditorCaption": ""
             }
           ]

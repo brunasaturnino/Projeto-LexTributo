@@ -48,6 +48,7 @@ namespace back_end.Controllers
             {
                 Id = user.Id,
                 Username = user.Username,
+                Email = user.Email,
                 Role = user.Role
             });
 
@@ -71,6 +72,7 @@ namespace back_end.Controllers
             {
                 Id = user.Id,
                 Username = user.Username,
+                Email = user.Email,
                 Role = user.Role
             };
 

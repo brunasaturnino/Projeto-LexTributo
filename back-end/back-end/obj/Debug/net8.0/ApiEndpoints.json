@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "back_end.Models.UserDto",
+        "Type": "back_end.Models.UserLoginDto",
         "IsRequired": true
       }
     ],

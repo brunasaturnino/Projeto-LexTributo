@@ -28,6 +28,7 @@ namespace back_end.Services
                 .HashPassword(user, request.Password);
 
             user.Username = request.Username;
+            user.Email = request.Email;
             user.PasswordHash = hashedPassword;
             user.Role = request.Role;
 
