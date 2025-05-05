@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+import { useRouter } from "next/router";
 import {
   Container,
   Card,
@@ -10,43 +12,83 @@ import {
 } from "./styles";
 import { Button } from "../../components/Button";
 import logo from "../../assets/logo.png";
-import { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import { useRouter } from "next/router";
-
+import { loginUser } from "../../services/auth";
+import { UserLogin } from "../../types/User";
 
 export default function LoginPage() {
-  const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
   const router = useRouter();
 
-  const handleLogin = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [form, setForm] = useState<UserLogin>({ email: "", password: "" });
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [apiError, setApiError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  }
+
+  async function handleLogin() {
     let valid = true;
+    setApiError("");
 
-    // Regex simples para email
+    // Validação de email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!emailRegex.test(email)) {
+    if (!emailRegex.test(form.email)) {
       setEmailError("Email inválido");
       valid = false;
     } else {
       setEmailError("");
     }
 
-    if (password.length < 6) {
-      setPasswordError("A senha precisa de pelo menos 6 caracteres");
+    // Validação de senha
+    if (form.password.length < 6) {
+      setPasswordError("A senha precisa ter ao menos 6 caracteres");
       valid = false;
     } else {
       setPasswordError("");
     }
 
-    if (valid) {
-      alert("Login válido!");
+    if (!valid) return;
+
+    setLoading(true);
+    try {
+      const { token } = await loginUser(form);
+      // token já salvo no localStorage pelo serviço
+      router.push("/"); // redireciona para a home/dashboard
+    } catch (err: any) {
+      const data = err.response?.data;
+      let msg = "Erro ao fazer login";
+
+      if (data) {
+        // se veio uma string simples
+        if (typeof data === "string") {
+          msg = data;
+        }
+        // ProblemDetails padrão do ASP.NET Core com campo errors
+        else if (data.errors && typeof data.errors === "object") {
+          // junta todas as mensagens de validação
+          msg = Object.values(data.errors)
+            .flat()
+            .join(" ");
+        }
+        // título genérico de erro
+        else if (data.title) {
+          msg = data.title;
+        }
+        // fallback
+        else {
+          msg = JSON.stringify(data);
+        }
+      }
+
+      setApiError(msg);
+    } finally {
+      setLoading(false);
     }
-  };
+  }
 
   return (
     <Container>
@@ -56,18 +98,20 @@ export default function LoginPage() {
 
         <Input
           type="email"
+          name="email"
           placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={form.email}
+          onChange={handleChange}
         />
         {emailError && <ErrorMessage>{emailError}</ErrorMessage>}
 
         <PasswordWrapper>
           <Input
             type={showPassword ? "text" : "password"}
+            name="password"
             placeholder="Senha"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={form.password}
+            onChange={handleChange}
           />
           <TogglePassword onClick={() => setShowPassword(!showPassword)}>
             {showPassword ? <FiEyeOff size={15} /> : <FiEye size={15} />}
@@ -75,8 +119,16 @@ export default function LoginPage() {
         </PasswordWrapper>
         {passwordError && <ErrorMessage>{passwordError}</ErrorMessage>}
 
-        <Button onClick={handleLogin}>Entrar</Button>
-        <Register>Ainda não possui uma conta? <span onClick={() => router.push("/cadastro")}>Crie aqui.</span></Register>
+        {apiError && <ErrorMessage>{apiError}</ErrorMessage>}
+
+        <Button onClick={handleLogin} disabled={loading}>
+          {loading ? "Entrando..." : "Entrar"}
+        </Button>
+
+        <Register>
+          Ainda não possui uma conta?{" "}
+          <span onClick={() => router.push("/cadastro")}>Crie aqui.</span>
+        </Register>
       </Card>
     </Container>
   );

@@ -6,7 +6,7 @@ export interface UserRegistration {
 
 export interface UserLogin {
   email: string;
-  senha: string;
+  password: string;
 }
 
 export interface AuthResponse {
