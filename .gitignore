@@ -1,22 +1,48 @@
-# Diretórios gerados
+# -------------------------
+# .NET / Visual Studio
+# -------------------------
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.ilk
+*.log
+*.pdb
+*.db
+appsettings.Development.json
+secrets.json
+
+# Rider
+.idea/
+
+# Publishes
+publish/
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# -------------------------
+# Front‑end (Next.js)
+# -------------------------
+# dependencies
+node_modules/
+
+# build outputs
 .next/
 out/
-node_modules/
-build/
 dist/
+build/
 
-# Arquivos de cache
-*.log
-*.gz
-.cache/
-
-# Sistema operacional
-.DS_Store
-Thumbs.db
-
-# Ambiente
-.env
+# local env files
 .env.local
-/.vs
-/back-end/.vs/back-end/FileContentIndex
-/back-end/back-end/obj/Release/net8.0
+.env.*.local
+
+# misc
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
