@@ -96,10 +96,10 @@ export default function DetalhesProcesso() {
         <InfoRow><Label>Status:</Label><Value>{processo.status}</Value></InfoRow>
       </Card>
 
-      <DocumentCard>
-        <DocumentHeader>
-          <SectionTitle>Documentos</SectionTitle>
-        </DocumentHeader>
+      <Card>
+      <DocumentHeader>
+        <SectionTitle style={{ marginBottom: "1rem" }}>Documentos</SectionTitle>
+      </DocumentHeader>
 
         {documentos.length > 0 ? (
           <DocumentList>
@@ -115,7 +115,7 @@ export default function DetalhesProcesso() {
         ) : (
           <p style={{ marginTop: "1rem" }}>Nenhum documento disponível.</p>
         )}
-      </DocumentCard>
+      </Card>
     </Container>
   );
 }
