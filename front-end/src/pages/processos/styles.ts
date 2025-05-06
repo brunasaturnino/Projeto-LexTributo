@@ -94,12 +94,6 @@ export const AddButton = styled.button`
   }
 `;
 
-export const Card = styled.div`
-  background: white;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
-`;
 
 export const InfoRow = styled.div`
   display: flex;
@@ -213,4 +207,76 @@ export const CardDocumentRow = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-top: 24px;
+`;
+
+import { FiFileText } from "react-icons/fi";
+
+// Novos estilos para a seção de documentos
+export const Card = styled.div`
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;   // Já adiciona espaço entre os cards
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  & + & {
+    margin-top: 2rem;    // Aplica margem apenas entre cards consecutivos
+  }
+`;
+
+export const DocumentHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+`;
+
+export const SectionTitle = styled.h2`
+  font-size: 1.3rem;
+  color: #e60000;
+  margin: 0; // remove margem extra
+`;
+
+export const Section = styled.h2`
+  font-size: 1.3rem;
+  color: #e60000;
+  margin: 0 0 2rem 0; // margem inferior de 1rem
+`;
+
+export const DocumentList = styled.ul`
+  list-style: none;
+  margin-top: 1rem;
+  padding-left: 0;
+`;
+
+export const DocumentItem = styled.li`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+
+  a {
+    color: #2a3eb1;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
+export const DocumentIcon = styled(FiFileText)`
+  color: #555;
+`;
+
+export const DocumentActions = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+`;
+
+export const DocumentCard = styled(Card)`
+  padding: 1rem 2rem 2rem 2rem; // topo: 1rem, laterais: 2rem, fundo: 2rem
 `;
