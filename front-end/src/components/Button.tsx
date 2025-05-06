@@ -6,6 +6,7 @@ interface ButtonProps {
   onClick?: () => void;
   variant?: "filled" | "outlined" | "chips";
   disabled?: boolean;
+  type?: "button" | "submit" | "reset";
 }
 
 const StyledButton = styled.button<{ variant: string; disabled?: boolean }>`
@@ -20,7 +21,7 @@ const StyledButton = styled.button<{ variant: string; disabled?: boolean }>`
   cursor: pointer;
   width: 100%;
 
-  /* estilos para o estado disabled */
+  /* estilos para botão desabilitado */
   ${({ disabled }) =>
     disabled &&
     css`
@@ -28,7 +29,7 @@ const StyledButton = styled.button<{ variant: string; disabled?: boolean }>`
       cursor: not-allowed;
     `}
 
-  /* variantes do botão */
+  /* variantes */
   ${({ variant }) =>
     variant === "filled" &&
     css`
@@ -57,12 +58,14 @@ export const Button: React.FC<ButtonProps> = ({
   onClick,
   variant = "filled",
   disabled = false,
+  type = "button",
 }) => {
   return (
     <StyledButton
+      type={type}
       variant={variant}
-      onClick={disabled ? undefined : onClick}
       disabled={disabled}
+      onClick={disabled ? undefined : onClick}
     >
       {children}
     </StyledButton>

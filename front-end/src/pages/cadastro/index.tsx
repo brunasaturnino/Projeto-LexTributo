@@ -1,3 +1,9 @@
+// front-end/src/pages/register/index.tsx
+
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+import { registerUser } from '../../services/auth';
+import { Button } from '../../components/Button';
 import {
   Container,
   Card,
@@ -7,69 +13,99 @@ import {
   PasswordWrapper,
   TogglePassword,
   ErrorMessage,
-} from "./styles";
-import { Button } from "../../components/Button";
-import logo from "../../assets/logo.png";
-import { useState } from "react";
-import { FiEye, FiEyeOff } from "react-icons/fi";
-import { useRouter } from "next/router";
+} from './styles';
+import logo from '../../assets/logo.png';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
+import { UserRegistration } from '../../types/User';
 
 export default function RegisterPage() {
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  const [nome, setNome] = useState("");
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
-  const [confirmarSenha, setConfirmarSenha] = useState("");
+  const [form, setForm] = useState<UserRegistration>({ nome: '', email: '', senha: '' });
+  const [confirmPassword, setConfirmPassword] = useState('');
 
-  const [nomeError, setNomeError] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [senhaError, setSenhaError] = useState("");
-  const [confirmarSenhaError, setConfirmarSenhaError] = useState("");
+  const [nomeError, setNomeError] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [senhaError, setSenhaError] = useState('');
+  const [confirmPasswordError, setConfirmPasswordError] = useState('');
+  const [apiError, setApiError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const router = useRouter();
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  }
 
-  const handleRegister = () => {
+  function handleConfirmChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setConfirmPassword(e.target.value);
+  }
+
+  async function handleRegister() {
     let valid = true;
+    setApiError('');
+
+    // Validação de nome completo
+    if (!form.nome.trim()) {
+      setNomeError('Informe seu nome completo');
+      valid = false;
+    } else if (form.nome.trim().split(' ').length < 2) {
+      setNomeError('Informe nome e sobrenome');
+      valid = false;
+    } else {
+      setNomeError('');
+    }
+
+    // Validação de email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!nome.trim()) {
-      setNomeError("Informe seu nome completo");
-      valid = false;
-    } else if (nome.trim().split(" ").length < 2) {
-      setNomeError("Informe nome e sobrenome");
+    if (!emailRegex.test(form.email)) {
+      setEmailError('Email inválido');
       valid = false;
     } else {
-      setNomeError("");
+      setEmailError('');
     }
 
-    if (!emailRegex.test(email)) {
-      setEmailError("Email inválido");
+    // Validação de senha
+    if (form.senha.length < 6) {
+      setSenhaError('A senha precisa de pelo menos 6 caracteres');
       valid = false;
     } else {
-      setEmailError("");
+      setSenhaError('');
     }
 
-    if (senha.length < 6) {
-      setSenhaError("A senha precisa de pelo menos 6 caracteres");
+    // Validação de confirmação de senha
+    if (confirmPassword !== form.senha) {
+      setConfirmPasswordError('As senhas não coincidem');
       valid = false;
     } else {
-      setSenhaError("");
+      setConfirmPasswordError('');
     }
 
-    if (confirmarSenha !== senha) {
-      setConfirmarSenhaError("As senhas não coincidem");
-      valid = false;
-    } else {
-      setConfirmarSenhaError("");
-    }
+    if (!valid) return;
 
-    if (valid) {
-      alert("Conta criada!");
-      router.push("/login");
+    setLoading(true);
+    try {
+      await registerUser(form);
+      router.push('/login');
+    } catch (err: any) {
+      const data = err.response?.data;
+      let msg = 'Erro ao cadastrar usuário';
+      if (data) {
+        if (typeof data === 'string') {
+          msg = data;
+        } else if (data.title) {
+          msg = data.title;
+        } else if (data.errors && typeof data.errors === 'object') {
+          msg = Object.values(data.errors).flat().join(' ');
+        } else {
+          msg = JSON.stringify(data);
+        }
+      }
+      setApiError(msg);
+    } finally {
+      setLoading(false);
     }
-  };
+  }
 
   return (
     <Container>
@@ -78,27 +114,29 @@ export default function RegisterPage() {
         <Title>Cadastro</Title>
 
         <Input
-          type="text"
+          name="nome"
           placeholder="Nome completo"
-          value={nome}
-          onChange={e => setNome(e.target.value)}
+          value={form.nome}
+          onChange={handleChange}
         />
         {nomeError && <ErrorMessage>{nomeError}</ErrorMessage>}
 
         <Input
           type="email"
+          name="email"
           placeholder="Email"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
+          value={form.email}
+          onChange={handleChange}
         />
         {emailError && <ErrorMessage>{emailError}</ErrorMessage>}
 
         <PasswordWrapper>
           <Input
-            type={showPassword ? "text" : "password"}
+            type={showPassword ? 'text' : 'password'}
+            name="senha"
             placeholder="Senha"
-            value={senha}
-            onChange={e => setSenha(e.target.value)}
+            value={form.senha}
+            onChange={handleChange}
           />
           <TogglePassword onClick={() => setShowPassword(!showPassword)}>
             {showPassword ? <FiEyeOff size={15} /> : <FiEye size={15} />}
@@ -108,23 +146,28 @@ export default function RegisterPage() {
 
         <PasswordWrapper>
           <Input
-            type={showConfirmPassword ? "text" : "password"}
+            type={showConfirmPassword ? 'text' : 'password'}
             placeholder="Confirme sua senha"
-            value={confirmarSenha}
-            onChange={e => setConfirmarSenha(e.target.value)}
+            value={confirmPassword}
+            onChange={handleConfirmChange}
           />
           <TogglePassword onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
             {showConfirmPassword ? <FiEyeOff size={15} /> : <FiEye size={15} />}
           </TogglePassword>
         </PasswordWrapper>
-        {confirmarSenhaError && <ErrorMessage>{confirmarSenhaError}</ErrorMessage>}
+        {confirmPasswordError && <ErrorMessage>{confirmPasswordError}</ErrorMessage>}
 
-        <Button onClick={handleRegister}>Cadastrar</Button>
+        {apiError && <ErrorMessage>{apiError}</ErrorMessage>}
+
+        <Button type="button" onClick={handleRegister} disabled={loading}>
+          {loading ? 'Cadastrando...' : 'Cadastrar'}
+        </Button>
+
         <Register>
-          Já possui uma conta? <span onClick={() => router.push("/login")}>Faça login.</span>
+          Já possui uma conta?{' '}
+          <span onClick={() => router.push('/login')}>Faça login.</span>
         </Register>
       </Card>
     </Container>
   );
 }
-  
