@@ -1,3 +1,5 @@
+// front-end/src/pages/login/index.tsx
+
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import {
@@ -13,7 +15,7 @@ import {
 import { Button } from "../../components/Button";
 import logo from "../../assets/logo.png";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import { loginUser } from "../../services/auth";
+import { loginUser, fetchCurrentUser } from "../../services/auth";
 import { UserLogin } from "../../types/User";
 
 export default function LoginPage() {
@@ -55,31 +57,30 @@ export default function LoginPage() {
 
     setLoading(true);
     try {
-      const { token } = await loginUser(form);
-      // token já salvo no localStorage pelo serviço
-      router.push("/"); // redireciona para a home/dashboard
+      // 1) Faz login e salva token
+      await loginUser(form);
+
+      // 2) Busca dados do usuário logado
+      const user = await fetchCurrentUser();
+
+      // 3) Redireciona para a página de processos
+      //    Exemplo: /processos
+      //    Ou então: /processos?userId=${user.id}
+      router.push("/processos");
     } catch (err: any) {
       const data = err.response?.data;
       let msg = "Erro ao fazer login";
 
       if (data) {
-        // se veio uma string simples
         if (typeof data === "string") {
           msg = data;
-        }
-        // ProblemDetails padrão do ASP.NET Core com campo errors
-        else if (data.errors && typeof data.errors === "object") {
-          // junta todas as mensagens de validação
+        } else if (data.errors && typeof data.errors === "object") {
           msg = Object.values(data.errors)
             .flat()
             .join(" ");
-        }
-        // título genérico de erro
-        else if (data.title) {
+        } else if (data.title) {
           msg = data.title;
-        }
-        // fallback
-        else {
+        } else {
           msg = JSON.stringify(data);
         }
       }
@@ -108,7 +109,7 @@ export default function LoginPage() {
         <PasswordWrapper>
           <Input
             type={showPassword ? "text" : "password"}
-            name="password"
+            name="senha"
             placeholder="Senha"
             value={form.password}
             onChange={handleChange}
@@ -121,7 +122,7 @@ export default function LoginPage() {
 
         {apiError && <ErrorMessage>{apiError}</ErrorMessage>}
 
-        <Button onClick={handleLogin} disabled={loading}>
+        <Button onClick={handleLogin} disabled={loading} type="button">
           {loading ? "Entrando..." : "Entrar"}
         </Button>
 
