@@ -139,9 +139,17 @@ export default function ProcessosPage() {
                 </td>
                 <td>{p.status}</td>
                 <td style={{ textAlign: "right" }}>
-                  <ActionIcon onClick={() => alert(`Excluir ${p.nome}`)}>
+                <ActionIcon
+                    onClick={() => {
+                      const confirmado = window.confirm(`Tem certeza que deseja excluir o processo "${p.nome}"?`);
+                      if (confirmado) {
+                        setProcessos(prev => prev.filter(proc => proc.id !== p.id));
+                      }
+                    }}
+                  >
                     <FiTrash2 />
                   </ActionIcon>
+
                   <ActionIcon
                     onClick={() => router.push(`/processos/${p.id}/editar`)}
                     gray
