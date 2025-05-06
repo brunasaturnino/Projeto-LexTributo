@@ -1,11 +1,7 @@
 import api from './api';
-import { UserRegistration, UserLogin, UserProfile, AuthResponse } from '../types/User';
+import { UserLogin, UserProfile, AuthResponse } from '../types/User';
 
 const ENDPOINT = '/auth';
-
-export async function registerUser(dto: UserRegistration): Promise<void> {
-  await api.post(`${ENDPOINT}/register`, dto);
-}
 
 export async function loginUser(dto: UserLogin): Promise<AuthResponse> {
   const { data } = await api.post<AuthResponse>(`${ENDPOINT}/login`, dto);

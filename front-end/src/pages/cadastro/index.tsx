@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-import { registerUser } from '../../services/auth';
+import { registerUser } from '../../services/user';
 import { Button } from '../../components/Button';
 import {
   Container,
@@ -23,7 +23,7 @@ export default function RegisterPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  const [form, setForm] = useState<UserRegistration>({ nome: '', email: '', senha: '' });
+  const [form, setForm] = useState<UserRegistration>({ Username: '', Email: '', Role: 'advogado', Password: '' });
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const [nomeError, setNomeError] = useState('');
@@ -45,36 +45,36 @@ export default function RegisterPage() {
     let valid = true;
     setApiError('');
 
-    // Validação de nome completo
-    if (!form.nome.trim()) {
-      setNomeError('Informe seu nome completo');
+    // Validação de Username completo
+    if (!form.Username.trim()) {
+      setNomeError('Informe seu Nome completo');
       valid = false;
-    } else if (form.nome.trim().split(' ').length < 2) {
-      setNomeError('Informe nome e sobrenome');
+    } else if (form.Username.trim().split(' ').length < 2) {
+      setNomeError('Informe Nome e sobrenome');
       valid = false;
     } else {
       setNomeError('');
     }
 
-    // Validação de email
+    // Validação de Email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(form.email)) {
+    if (!emailRegex.test(form.Email)) {
       setEmailError('Email inválido');
       valid = false;
     } else {
       setEmailError('');
     }
 
-    // Validação de senha
-    if (form.senha.length < 6) {
+    // Validação de Password
+    if (form.Password.length < 6) {
       setSenhaError('A senha precisa de pelo menos 6 caracteres');
       valid = false;
     } else {
       setSenhaError('');
     }
 
-    // Validação de confirmação de senha
-    if (confirmPassword !== form.senha) {
+    // Validação de confirmação de Password
+    if (confirmPassword !== form.Password) {
       setConfirmPasswordError('As senhas não coincidem');
       valid = false;
     } else {
@@ -85,7 +85,7 @@ export default function RegisterPage() {
 
     setLoading(true);
     try {
-      await registerUser(form);
+      console.log(await registerUser(form));
       router.push('/login');
     } catch (err: any) {
       const data = err.response?.data;
@@ -114,18 +114,18 @@ export default function RegisterPage() {
         <Title>Cadastro</Title>
 
         <Input
-          name="nome"
+          name="Username"
           placeholder="Nome completo"
-          value={form.nome}
+          value={form.Username}
           onChange={handleChange}
         />
         {nomeError && <ErrorMessage>{nomeError}</ErrorMessage>}
 
         <Input
-          type="email"
-          name="email"
+          type="Email"
+          name="Email"
           placeholder="Email"
-          value={form.email}
+          value={form.Email}
           onChange={handleChange}
         />
         {emailError && <ErrorMessage>{emailError}</ErrorMessage>}
@@ -133,9 +133,9 @@ export default function RegisterPage() {
         <PasswordWrapper>
           <Input
             type={showPassword ? 'text' : 'password'}
-            name="senha"
+            name="Password"
             placeholder="Senha"
-            value={form.senha}
+            value={form.Password}
             onChange={handleChange}
           />
           <TogglePassword onClick={() => setShowPassword(!showPassword)}>
@@ -147,7 +147,7 @@ export default function RegisterPage() {
         <PasswordWrapper>
           <Input
             type={showConfirmPassword ? 'text' : 'password'}
-            placeholder="Confirme sua senha"
+            placeholder="Confirme sua Senha"
             value={confirmPassword}
             onChange={handleConfirmChange}
           />
