@@ -1,5 +1,7 @@
+import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
-import { useRef, useState } from "react";
+import { createProcess } from "../../services/process";
+import { fetchCurrentUser } from "../../services/auth";
 import {
   Container,
   Title,
@@ -7,8 +9,9 @@ import {
   InfoRow,
   Label,
   DocumentButton,
-} from "./styles";
+} from "./styles"; // ajuste conforme sua estrutura
 import { FiFilePlus, FiFileText, FiTrash2, FiArrowLeft } from "react-icons/fi";
+import { ProcessCreateDto } from "../../types/Process";
 
 interface Documento {
   file: File;
@@ -22,23 +25,26 @@ export default function NovoProcesso() {
   const [autor, setAutor] = useState("");
   const [reu, setReu] = useState("");
   const [tribunal, setTribunal] = useState("");
-  const [status, setStatus] = useState("Em andamento");
+  const [status, setStatus] = useState("aberto");
   const [documentos, setDocumentos] = useState<Documento[]>([]);
-
+  const [loading, setLoading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleAddDocument = () => {
-    fileInputRef.current?.click();
-  };
+  useEffect(() => {
+    // garante que o usuário está autenticado
+    fetchCurrentUser().catch(() => router.push("/login"));
+  }, []);
+
+  const handleAddDocument = () => fileInputRef.current?.click();
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (files && files.length > 0) {
-      const novosDocs = Array.from(files).map((file) => ({
+      const novos: Documento[] = Array.from(files).map((file) => ({
         file,
         url: URL.createObjectURL(file),
       }));
-      setDocumentos((prev) => [...prev, ...novosDocs]);
+      setDocumentos((prev) => [...prev, ...novos]);
     }
   };
 
@@ -46,52 +52,53 @@ export default function NovoProcesso() {
     setDocumentos((prev) => prev.filter((_, i) => i !== index));
   };
 
-  const handleSalvar = (e: React.FormEvent) => {
+  const handleSalvar = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    const dadosProcesso = {
-      nome,
-      autor,
-      reu,
-      tribunal,
-      status,
-      documentos: documentos.map((doc) => doc.file.name),
-    };
-
-    console.log("Dados salvos:", dadosProcesso);
-    alert(`Processo "${nome}" cadastrado com ${documentos.length} documento(s)!`);
-    router.push("/processos");
+    setLoading(true);
+    try {
+      // monta DTO para a API (ajuste caso seu back aceite mais campos)
+      const dto: ProcessCreateDto = {
+        Titulo: nome,
+        Descricao: `Autor: ${autor}\nRéu: ${reu}\nTribunal: ${tribunal}\nStatus: ${status}`,
+      };
+      const created = await createProcess(dto);
+      router.push(`/processos/${created.Id}`);
+    } catch (err: any) {
+      console.error("Erro ao criar processo:", err);
+      alert(err.response?.data?.title || "Falha ao salvar processo");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <Container>
-        <div
-    style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
-        gap: "0.5rem",
-        marginBottom: "1.5rem",
-    }}
-    >
-    <button
-        type="button"
-        onClick={() => router.back()}
+      <div
         style={{
-        background: "transparent",
-        border: "none",
-        cursor: "pointer",
-        padding: 0,
-        display: "flex",
-        alignItems: "center",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          gap: "0.5rem",
+          marginBottom: "1.5rem",
         }}
-        title="Voltar"
-    >
-        <FiArrowLeft size={22} color="#e60000" />
-    </button>
-    <Title style={{ margin: 0 }}>Cadastrar Novo Processo</Title>
-    </div>
-
+      >
+        <button
+          type="button"
+          onClick={() => router.back()}
+          style={{
+            background: "transparent",
+            border: "none",
+            cursor: "pointer",
+            padding: 0,
+            display: "flex",
+            alignItems: "center",
+          }}
+          title="Voltar"
+        >
+          <FiArrowLeft size={22} color="#e60000" />
+        </button>
+        <Title style={{ margin: 0 }}>Cadastrar Novo Processo</Title>
+      </div>
 
       <form onSubmit={handleSalvar}>
         <Card>
@@ -147,10 +154,9 @@ export default function NovoProcesso() {
               style={inputStyle}
               required
             >
-              <option>Em andamento</option>
-              <option>Concluído</option>
-              <option>Pendente</option>
-              <option>Arquivado</option>
+              <option value="aberto">Aberto</option>
+              <option value="em_andamento">Em andamento</option>
+              <option value="concluido">Concluído</option>
             </select>
           </InfoRow>
 
@@ -170,7 +176,9 @@ export default function NovoProcesso() {
 
               <ul style={{ listStyle: "none", paddingLeft: 0, marginTop: "1rem" }}>
                 {documentos.length === 0 ? (
-                  <li style={{ color: "#777" }}>Nenhum documento adicionado ainda.</li>
+                  <li style={{ color: "#777" }}>
+                    Nenhum documento adicionado ainda.
+                  </li>
                 ) : (
                   documentos.map((doc, index) => (
                     <li
@@ -211,8 +219,8 @@ export default function NovoProcesso() {
             </div>
           </InfoRow>
 
-          <button type="submit" style={buttonStyle}>
-            Salvar
+          <button type="submit" style={buttonStyle} disabled={loading}>
+            {loading ? "Salvando..." : "Salvar"}
           </button>
         </Card>
       </form>
