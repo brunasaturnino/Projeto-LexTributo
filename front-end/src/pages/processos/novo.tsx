@@ -1,69 +1,31 @@
 import { useRouter } from "next/router";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import {
   Container,
   Title,
   Card,
   InfoRow,
   Label,
-  Header,
   DocumentButton,
-} from "../styles"; // ajuste o path conforme sua estrutura
+} from "./styles";
 import { FiFilePlus, FiFileText, FiTrash2 } from "react-icons/fi";
 
-interface Processo {
-  id: string;
-  nome: string;
-  autor: string;
-  reu: string;
-  tribunal: string;
-  status: string;
-}
-
 interface Documento {
-  nome: string;
-  url: string;
   file: File;
+  url: string;
 }
 
-export default function EditarProcesso() {
+export default function NovoProcesso() {
   const router = useRouter();
-  const { id } = router.query;
 
-  const [processo, setProcesso] = useState<Processo | null>(null);
+  const [nome, setNome] = useState("");
+  const [autor, setAutor] = useState("");
+  const [reu, setReu] = useState("");
+  const [tribunal, setTribunal] = useState("");
+  const [status, setStatus] = useState("Em andamento");
   const [documentos, setDocumentos] = useState<Documento[]>([]);
+
   const fileInputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    if (!id) return;
-
-    const listaDeProcessos: Processo[] = [
-      {
-        id: "1",
-        nome: "Processo 1",
-        autor: "Empresa X",
-        reu: "Fazenda Pública",
-        tribunal: "TJ-SP",
-        status: "Em andamento",
-      },
-      {
-        id: "2",
-        nome: "Processo 2",
-        autor: "João da Silva",
-        reu: "União Federal",
-        tribunal: "TRF-1",
-        status: "Concluído",
-      },
-    ];
-
-    const encontrado = listaDeProcessos.find((p) => p.id === id);
-    setProcesso(encontrado || null);
-  }, [id]);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    if (!processo) return;
-    setProcesso({ ...processo, [e.target.name]: e.target.value });
-  };
 
   const handleAddDocument = () => {
     fileInputRef.current?.click();
@@ -73,9 +35,8 @@ export default function EditarProcesso() {
     const files = e.target.files;
     if (files && files.length > 0) {
       const novosDocs = Array.from(files).map((file) => ({
-        nome: file.name,
-        url: URL.createObjectURL(file),
         file,
+        url: URL.createObjectURL(file),
       }));
       setDocumentos((prev) => [...prev, ...novosDocs]);
     }
@@ -85,49 +46,85 @@ export default function EditarProcesso() {
     setDocumentos((prev) => prev.filter((_, i) => i !== index));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSalvar = (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Processo atualizado:\n${JSON.stringify(processo, null, 2)}`);
-    router.push(`/processos/${processo?.id}`);
-  };
 
-  if (!processo) return <p style={{ padding: "2rem" }}>Carregando...</p>;
+    const dadosProcesso = {
+      nome,
+      autor,
+      reu,
+      tribunal,
+      status,
+      documentos: documentos.map((doc) => doc.file.name),
+    };
+
+    console.log("Dados salvos:", dadosProcesso);
+    alert(`Processo "${nome}" cadastrado com ${documentos.length} documento(s)!`);
+    router.push("/processos");
+  };
 
   return (
     <Container>
-      <Header>
-        <Title>Editar Processo</Title>
-      </Header>
+      <Title style={{ marginBottom: "1.5rem" }}>Cadastrar Novo Processo</Title>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSalvar}>
         <Card>
           <InfoRow>
             <Label>Nome:</Label>
-            <input name="nome" value={processo.nome} onChange={handleChange} style={inputStyle} required />
+            <input
+              type="text"
+              value={nome}
+              onChange={(e) => setNome(e.target.value)}
+              style={inputStyle}
+              required
+            />
           </InfoRow>
 
           <InfoRow>
             <Label>Autor:</Label>
-            <input name="autor" value={processo.autor} onChange={handleChange} style={inputStyle} required />
+            <input
+              type="text"
+              value={autor}
+              onChange={(e) => setAutor(e.target.value)}
+              style={inputStyle}
+              required
+            />
           </InfoRow>
 
           <InfoRow>
             <Label>Réu:</Label>
-            <input name="reu" value={processo.reu} onChange={handleChange} style={inputStyle} required />
+            <input
+              type="text"
+              value={reu}
+              onChange={(e) => setReu(e.target.value)}
+              style={inputStyle}
+              required
+            />
           </InfoRow>
 
           <InfoRow>
             <Label>Tribunal:</Label>
-            <input name="tribunal" value={processo.tribunal} onChange={handleChange} style={inputStyle} required />
+            <input
+              type="text"
+              value={tribunal}
+              onChange={(e) => setTribunal(e.target.value)}
+              style={inputStyle}
+              required
+            />
           </InfoRow>
 
           <InfoRow>
             <Label>Status:</Label>
-            <select name="status" value={processo.status} onChange={handleChange} style={inputStyle}>
-              <option value="Em andamento">Em andamento</option>
-              <option value="Pendente">Pendente</option>
-              <option value="Concluído">Concluído</option>
-              <option value="Arquivado">Arquivado</option>
+            <select
+              value={status}
+              onChange={(e) => setStatus(e.target.value)}
+              style={inputStyle}
+              required
+            >
+              <option>Em andamento</option>
+              <option>Concluído</option>
+              <option>Pendente</option>
+              <option>Arquivado</option>
             </select>
           </InfoRow>
 
@@ -137,7 +134,13 @@ export default function EditarProcesso() {
               <DocumentButton type="button" onClick={handleAddDocument}>
                 <FiFilePlus size={20} />
               </DocumentButton>
-              <input type="file" ref={fileInputRef} style={{ display: "none" }} onChange={handleFileChange} multiple />
+              <input
+                type="file"
+                ref={fileInputRef}
+                style={{ display: "none" }}
+                onChange={handleFileChange}
+                multiple
+              />
 
               <ul style={{ listStyle: "none", paddingLeft: 0, marginTop: "1rem" }}>
                 {documentos.length === 0 ? (
@@ -154,8 +157,13 @@ export default function EditarProcesso() {
                       }}
                     >
                       <FiFileText />
-                      <a href={doc.url} target="_blank" rel="noopener noreferrer" style={{ color: "#2a3eb1" }}>
-                        {doc.nome}
+                      <a
+                        href={doc.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: "#2a3eb1", textDecoration: "none" }}
+                      >
+                        {doc.file.name}
                       </a>
                       <button
                         type="button"
@@ -166,6 +174,7 @@ export default function EditarProcesso() {
                           color: "#e60000",
                           cursor: "pointer",
                         }}
+                        title="Remover"
                       >
                         <FiTrash2 />
                       </button>

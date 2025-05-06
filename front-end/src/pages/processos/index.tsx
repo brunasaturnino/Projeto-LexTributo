@@ -98,7 +98,7 @@ export default function ProcessosPage() {
               onChange={e => setBusca(e.target.value)}
             />
           </SearchWrapper>
-          <AddButton onClick={() => alert("Novo processo")}>
+          <AddButton onClick={() => router.push("/processos/novo")}>
             <FiPlus />
           </AddButton>
         </TableHeaderRow>

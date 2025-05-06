@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Container,
   Title,
@@ -9,15 +9,13 @@ import {
   Header,
   Value,
   Section,
-  DocumentButton,
   SectionTitle,
   DocumentList,
   DocumentItem,
   DocumentIcon,
   DocumentHeader,
   DocumentCard,
-} from "../styles";
-import { FiFilePlus } from "react-icons/fi";
+} from "../styles"; // ajuste o path se necessário
 
 interface Processo {
   id: string;
@@ -38,7 +36,6 @@ export default function DetalhesProcesso() {
   const { id } = router.query;
   const [processo, setProcesso] = useState<Processo | null>(null);
   const [documentos, setDocumentos] = useState<Documento[]>([]);
-  const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (!id) return;
@@ -52,22 +49,15 @@ export default function DetalhesProcesso() {
 
     const encontrado = listaDeProcessos.find((p) => p.id === id);
     setProcesso(encontrado || null);
+
+    // Simulação de documentos já associados
+    const documentosExemplo: Documento[] = [
+      { nome: "contrato.pdf", url: "/docs/contrato.pdf" },
+      { nome: "protocolo.pdf", url: "/docs/protocolo.pdf" },
+    ];
+
+    setDocumentos(documentosExemplo);
   }, [id]);
-
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const files = event.target.files;
-    if (files && files.length > 0) {
-      const novosDocs: Documento[] = Array.from(files).map(file => ({
-        nome: file.name,
-        url: URL.createObjectURL(file),
-      }));
-      setDocumentos((prev) => [...prev, ...novosDocs]);
-    }
-  };
-
-  const handleAddDocument = () => {
-    fileInputRef.current?.click();
-  };
 
   if (!processo) {
     return <p style={{ padding: "2rem" }}>Carregando processo...</p>;
@@ -90,21 +80,9 @@ export default function DetalhesProcesso() {
       </Card>
 
       <DocumentCard>
-            <DocumentHeader>
-        <SectionTitle>Documentos</SectionTitle>
-        <div>
-          <DocumentButton onClick={handleAddDocument}>
-            <FiFilePlus size={20} />
-          </DocumentButton>
-          <input
-            type="file"
-            ref={fileInputRef}
-            style={{ display: "none" }}
-            onChange={handleFileChange}
-          />
-        </div>
-      </DocumentHeader>
-
+        <DocumentHeader>
+          <SectionTitle>Documentos</SectionTitle>
+        </DocumentHeader>
 
         {documentos.length > 0 ? (
           <DocumentList>
@@ -118,7 +96,7 @@ export default function DetalhesProcesso() {
             ))}
           </DocumentList>
         ) : (
-          <p style={{ marginTop: "1rem" }}>Nenhum documento adicionado ainda.</p>
+          <p style={{ marginTop: "1rem" }}>Nenhum documento disponível.</p>
         )}
       </DocumentCard>
     </Container>
