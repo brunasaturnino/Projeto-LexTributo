@@ -1,12 +1,13 @@
 export interface UserRegistration {
-  nome: string;
-  email: string;
-  senha: string;
+  Username: string;
+  Email: string;
+  Role: string;
+  Password: string;
 }
 
 export interface UserLogin {
-  email: string;
-  password: string;
+  Email: string;
+  Password: string;
 }
 
 export interface AuthResponse {
@@ -14,7 +15,7 @@ export interface AuthResponse {
 }
 
 export interface UserProfile {
-  id: string;
-  nome: string;
-  email: string;
+  Id: string;
+  Username: string;
+  Email: string;
 }

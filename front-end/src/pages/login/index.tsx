@@ -22,7 +22,7 @@ export default function LoginPage() {
   const router = useRouter();
 
   const [showPassword, setShowPassword] = useState(false);
-  const [form, setForm] = useState<UserLogin>({ email: "", password: "" });
+  const [form, setForm] = useState<UserLogin>({ Email: "", Password: "" });
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [apiError, setApiError] = useState("");
@@ -36,9 +36,9 @@ export default function LoginPage() {
     let valid = true;
     setApiError("");
 
-    // Validação de email
+    // Validação de Email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(form.email)) {
+    if (!emailRegex.test(form.Email)) {
       setEmailError("Email inválido");
       valid = false;
     } else {
@@ -46,7 +46,7 @@ export default function LoginPage() {
     }
 
     // Validação de senha
-    if (form.password.length < 6) {
+    if (form.Password.length < 6) {
       setPasswordError("A senha precisa ter ao menos 6 caracteres");
       valid = false;
     } else {
@@ -61,7 +61,7 @@ export default function LoginPage() {
       await loginUser(form);
 
       // 2) Busca dados do usuário logado
-      const user = await fetchCurrentUser();
+      // const user = await fetchCurrentUser();
 
       // 3) Redireciona para a página de processos
       //    Exemplo: /processos
@@ -98,20 +98,20 @@ export default function LoginPage() {
         <Title>Login</Title>
 
         <Input
-          type="email"
-          name="email"
+          type="Email"
+          name="Email"
           placeholder="Email"
-          value={form.email}
+          value={form.Email}
           onChange={handleChange}
         />
         {emailError && <ErrorMessage>{emailError}</ErrorMessage>}
 
         <PasswordWrapper>
           <Input
-            type={showPassword ? "text" : "password"}
-            name="senha"
+            type={showPassword ? "text" : "Password"}
+            name="Password"
             placeholder="Senha"
-            value={form.password}
+            value={form.Password}
             onChange={handleChange}
           />
           <TogglePassword onClick={() => setShowPassword(!showPassword)}>

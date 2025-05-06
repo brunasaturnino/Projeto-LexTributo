@@ -1,19 +1,19 @@
 export interface Process {
-    id: string;
-    titulo: string;
-    descricao: string;
-    criadoEm: string;  // ISO date
-    status: 'aberto' | 'em_andamento' | 'concluido';
+    Id: string;
+    Titulo: string;
+    Descricao: string;
+    CriadoEm: string;  // ISO date
+    Status: 'aberto' | 'em_andamento' | 'concluido';
   }
   
   export interface ProcessCreateDto {
-    titulo: string;
-    descricao: string;
+    Titulo: string;
+    Descricao: string;
   }
   
   export interface ProcessUpdateDto {
-    titulo?: string;
-    descricao?: string;
-    status?: Process['status'];
+    Titulo?: string;
+    Descricao?: string;
+    Status?: Process['Status'];
   }
   
