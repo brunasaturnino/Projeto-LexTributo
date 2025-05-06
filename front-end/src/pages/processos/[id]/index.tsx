@@ -1,9 +1,21 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { Container, Title, Card, InfoRow, Label, Header, Value, DocumentButton, CardDocumentRow} from "../styles";
-import { FiFilePlus } from "react-icons/fi";
-
-
+import {
+  Container,
+  Title,
+  Card,
+  InfoRow,
+  Label,
+  Header,
+  Value,
+  Section,
+  SectionTitle,
+  DocumentList,
+  DocumentItem,
+  DocumentIcon,
+  DocumentHeader,
+  DocumentCard,
+} from "../styles"; // ajuste o path se necessário
 
 interface Processo {
   id: string;
@@ -14,52 +26,37 @@ interface Processo {
   status: string;
 }
 
+interface Documento {
+  nome: string;
+  url: string;
+}
+
 export default function DetalhesProcesso() {
   const router = useRouter();
   const { id } = router.query;
-
   const [processo, setProcesso] = useState<Processo | null>(null);
+  const [documentos, setDocumentos] = useState<Documento[]>([]);
 
   useEffect(() => {
     if (!id) return;
 
     const listaDeProcessos: Processo[] = [
-      {
-        id: "1",
-        nome: "Processo 1",
-        autor: "Empresa X",
-        reu: "Fazenda Pública",
-        tribunal: "TJ-SP",
-        status: "Em andamento",
-      },
-      {
-        id: "2",
-        nome: "Processo 2",
-        autor: "João da Silva",
-        reu: "União Federal",
-        tribunal: "TRF-1",
-        status: "Concluído",
-      },
-      {
-        id: "3",
-        nome: "Processo 3",
-        autor: "Maria Oliveira",
-        reu: "Estado de Minas Gerais",
-        tribunal: "TJ-MG",
-        status: "Pendente",
-      },
-      {
-        id: "4",
-        nome: "Processo 4",
-        autor: "Empresa Z",
-        reu: "Fazenda Pública",
-        tribunal: "TJ-RS",
-        status: "Arquivado",
-      },
+      { id: "1", nome: "Processo 1", autor: "Empresa X", reu: "Fazenda Pública", tribunal: "TJ-SP", status: "Em andamento" },
+      { id: "2", nome: "Processo 2", autor: "João da Silva", reu: "União Federal", tribunal: "TRF-1", status: "Concluído" },
+      { id: "3", nome: "Processo 3", autor: "Maria Oliveira", reu: "Estado de Minas Gerais", tribunal: "TJ-MG", status: "Pendente" },
+      { id: "4", nome: "Processo 4", autor: "Empresa Z", reu: "Fazenda Pública", tribunal: "TJ-RS", status: "Arquivado" },
     ];
 
     const encontrado = listaDeProcessos.find((p) => p.id === id);
     setProcesso(encontrado || null);
+
+    // Simulação de documentos já associados
+    const documentosExemplo: Documento[] = [
+      { nome: "contrato.pdf", url: "/docs/contrato.pdf" },
+      { nome: "protocolo.pdf", url: "/docs/protocolo.pdf" },
+    ];
+
+    setDocumentos(documentosExemplo);
   }, [id]);
 
   if (!processo) {
@@ -68,40 +65,40 @@ export default function DetalhesProcesso() {
 
   return (
     <Container>
-            <Header>
-      <Title>Detalhes do Processo</Title>
-            </Header>
+      <Header>
+        <Title>Detalhes do Processo</Title>
+      </Header>
+
       <Card>
-        <InfoRow>
-          <Label>ID:</Label>
-          <Value>{processo.id}</Value>
-        </InfoRow>
-        <InfoRow>
-          <Label>Nome:</Label>
-          <Value>{processo.nome}</Value>
-        </InfoRow>
-        <InfoRow>
-          <Label>Autor:</Label>
-          <Value>{processo.autor}</Value>
-        </InfoRow>
-        <InfoRow>
-          <Label>Réu:</Label>
-          <Value>{processo.reu}</Value>
-        </InfoRow>
-        <InfoRow>
-          <Label>Tribunal:</Label>
-          <Value>{processo.tribunal}</Value>
-        </InfoRow>
-        <InfoRow>
-          <Label>Status:</Label>
-          <Value>{processo.status}</Value>
-        </InfoRow>
-        <CardDocumentRow>
-          <DocumentButton onClick={() => alert("Adicionar documentos ao processo")}>
-            <FiFilePlus size={20} />
-          </DocumentButton>
-        </CardDocumentRow>
+        <Section>Informações do Processo</Section>
+        <InfoRow><Label>ID:</Label><Value>{processo.id}</Value></InfoRow>
+        <InfoRow><Label>Nome:</Label><Value>{processo.nome}</Value></InfoRow>
+        <InfoRow><Label>Autor:</Label><Value>{processo.autor}</Value></InfoRow>
+        <InfoRow><Label>Réu:</Label><Value>{processo.reu}</Value></InfoRow>
+        <InfoRow><Label>Tribunal:</Label><Value>{processo.tribunal}</Value></InfoRow>
+        <InfoRow><Label>Status:</Label><Value>{processo.status}</Value></InfoRow>
       </Card>
+
+      <DocumentCard>
+        <DocumentHeader>
+          <SectionTitle>Documentos</SectionTitle>
+        </DocumentHeader>
+
+        {documentos.length > 0 ? (
+          <DocumentList>
+            {documentos.map((doc, index) => (
+              <DocumentItem key={index}>
+                <DocumentIcon size={18} />
+                <a href={doc.url} target="_blank" rel="noopener noreferrer">
+                  {doc.nome}
+                </a>
+              </DocumentItem>
+            ))}
+          </DocumentList>
+        ) : (
+          <p style={{ marginTop: "1rem" }}>Nenhum documento disponível.</p>
+        )}
+      </DocumentCard>
     </Container>
   );
 }
