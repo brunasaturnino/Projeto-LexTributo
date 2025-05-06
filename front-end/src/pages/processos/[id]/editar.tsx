@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
+
 import {
   Container,
   Title,
@@ -9,7 +10,7 @@ import {
   Header,
   DocumentButton,
 } from "../styles"; // ajuste o path conforme sua estrutura
-import { FiFilePlus, FiFileText, FiTrash2 } from "react-icons/fi";
+import { FiFilePlus, FiFileText, FiTrash2, FiArrowLeft } from "react-icons/fi";
 
 interface Processo {
   id: string;
@@ -95,9 +96,24 @@ export default function EditarProcesso() {
 
   return (
     <Container>
-      <Header>
-        <Title>Editar Processo</Title>
-      </Header>
+        <Header style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "0.5rem", marginBottom: "1.5rem" }}>
+          <button
+            type="button"
+            onClick={() => router.back()}
+            style={{
+              background: "transparent",
+              border: "none",
+              cursor: "pointer",
+              padding: 0,
+              display: "flex",
+              alignItems: "center",
+            }}
+            title="Voltar"
+          >
+            <FiArrowLeft size={22} color="#e60000" />
+          </button>
+          <Title style={{ margin: 0 }}>Editar Processo</Title>
+        </Header>
 
       <form onSubmit={handleSubmit}>
         <Card>
@@ -198,6 +214,16 @@ const buttonStyle: React.CSSProperties = {
   padding: "0.7rem 1.5rem",
   backgroundColor: "#e60000",
   color: "white",
+  border: "none",
+  borderRadius: "6px",
+  cursor: "pointer",
+};
+
+const backButtonStyle: React.CSSProperties = {
+  marginBottom: "1.5rem",
+  padding: "0.5rem 1rem",
+  backgroundColor: "#ccc",
+  color: "#333",
   border: "none",
   borderRadius: "6px",
   cursor: "pointer",

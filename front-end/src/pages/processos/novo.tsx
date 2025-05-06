@@ -8,7 +8,7 @@ import {
   Label,
   DocumentButton,
 } from "./styles";
-import { FiFilePlus, FiFileText, FiTrash2 } from "react-icons/fi";
+import { FiFilePlus, FiFileText, FiTrash2, FiArrowLeft } from "react-icons/fi";
 
 interface Documento {
   file: File;
@@ -65,7 +65,33 @@ export default function NovoProcesso() {
 
   return (
     <Container>
-      <Title style={{ marginBottom: "1.5rem" }}>Cadastrar Novo Processo</Title>
+        <div
+    style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        gap: "0.5rem",
+        marginBottom: "1.5rem",
+    }}
+    >
+    <button
+        type="button"
+        onClick={() => router.back()}
+        style={{
+        background: "transparent",
+        border: "none",
+        cursor: "pointer",
+        padding: 0,
+        display: "flex",
+        alignItems: "center",
+        }}
+        title="Voltar"
+    >
+        <FiArrowLeft size={22} color="#e60000" />
+    </button>
+    <Title style={{ margin: 0 }}>Cadastrar Novo Processo</Title>
+    </div>
+
 
       <form onSubmit={handleSalvar}>
         <Card>

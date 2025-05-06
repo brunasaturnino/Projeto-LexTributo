@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { FiArrowLeft } from "react-icons/fi";
 import {
   Container,
   Title,
@@ -65,9 +66,25 @@ export default function DetalhesProcesso() {
 
   return (
     <Container>
-      <Header>
-        <Title>Detalhes do Processo</Title>
+      <Header style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "0.5rem", marginBottom: "1.5rem" }}>
+        <button
+          type="button"
+          onClick={() => router.back()}
+          style={{
+            background: "transparent",
+            border: "none",
+            cursor: "pointer",
+            padding: 0,
+            display: "flex",
+            alignItems: "center",
+          }}
+          title="Voltar"
+        >
+          <FiArrowLeft size={22} color="#e60000" />
+        </button>
+        <Title style={{ margin: 0 }}>Detalhes do Processo</Title>
       </Header>
+
 
       <Card>
         <Section>Informações do Processo</Section>

@@ -278,5 +278,5 @@ export const DocumentActions = styled.div`
 `;
 
 export const DocumentCard = styled(Card)`
-  padding: 1rem 2rem 2rem 2rem; // topo: 1rem, laterais: 2rem, fundo: 2rem
+  padding: 2rem 2rem 2rem 2rem; // topo: 1rem, laterais: 2rem, fundo: 2rem
 `;
