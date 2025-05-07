@@ -28,8 +28,9 @@ import {
   FiLogOut,
 } from "react-icons/fi";
 import { getProcesses, deleteProcess } from "../../services/process";
-import { fetchCurrentUser } from "../../services/auth";
+import { fetchCurrentUser, getCurrentUserId } from "../../services/auth";
 import { Process } from "../../types/Process";
+import { jwtDecode } from "jwt-decode";
 
 export default function ProcessosPage() {
   const [processos, setProcessos] = useState<Process[]>([]);
@@ -41,26 +42,27 @@ export default function ProcessosPage() {
   useEffect(() => {
     (async () => {
       try {
-        // Garante que o token é válido e temos um usuário logado
-        await fetchCurrentUser();
         // Busca os processos do usuário
         const lista = await getProcesses();
-        setProcessos(lista);
-      } catch (err) {
+        if (lista){
+          setProcessos(lista);
+        }
+      } catch (err: any) {
         // Se não estiver logado ou der erro de API, manda pro login
-        router.push("/login");
+        console.log(err.response.data)
       }
     })();
   }, []);
 
   const filtered = processos
-    .filter(p => p.Titulo.toLowerCase().includes(busca.toLowerCase()))
-    .filter(p => !filtroStatus || p.Status === filtroStatus)
+    .filter(p => p.nome?.toLowerCase().includes(busca.toLowerCase()))
+    .filter(p => !filtroStatus || p.status === filtroStatus)
     .sort((a, b) =>
       ordemAsc
-        ? a.Titulo.localeCompare(b.Titulo)
-        : b.Titulo.localeCompare(a.Titulo)
+        ? a.nome.localeCompare(b.nome)
+        : b.nome.localeCompare(a.nome)
     );
+
 
   const allStatuses = ["", "aberto", "em_andamento", "concluido"];
 
@@ -118,26 +120,32 @@ export default function ProcessosPage() {
             <tr>
               <th>
                 <SortButton onClick={() => setOrdemAsc(!ordemAsc)}>
-                  Título {ordemAsc ? <FiChevronUp /> : <FiChevronDown />}
+                  Numero {ordemAsc ? <FiChevronUp /> : <FiChevronDown />}
                 </SortButton>
               </th>
+              <th>Autor</th>
+              <th>Reu</th>
+              <th>Tribunal</th>
               <th>Status</th>
               <th style={{ textAlign: "right" }}>Ações</th>
             </tr>
           </thead>
           <tbody>
-            {filtered.map(p => (
-              <tr key={p.Id}>
+            {processos.map(p => (
+              <tr key={p.id}>
                 <td
-                  onClick={() => router.push(`/processos/${p.Id}`)}
+                  onClick={() => router.push(`/processos/${p.id}`)}
                   style={{ cursor: "pointer", fontWeight: 500 }}
                 >
-                  {p.Titulo}
+                  {p.numeroProcesso}
                 </td>
+                <td>{p.autor}</td>
+                <td>{p.reu}</td>
+                <td>{p.tribunal}</td>
                 <td>
-                  {p.Status === "aberto"
+                  {p.status === "aberto"
                     ? "Aberto"
-                    : p.Status === "em_andamento"
+                    : p.status === "em_andamento"
                     ? "Em andamento"
                     : "Concluído"}
                 </td>
@@ -146,12 +154,12 @@ export default function ProcessosPage() {
                     onClick={async () => {
                       if (
                         window.confirm(
-                          `Excluir o processo “${p.Titulo}”?`
+                          `Excluir o processo “${p.numeroProcesso}”?`
                         )
                       ) {
-                        await deleteProcess(p.Id);
+                        await deleteProcess(p.id);
                         setProcessos(prev =>
-                          prev.filter(x => x.Id !== p.Id)
+                          prev.filter(x => x.id !== p.id)
                         );
                       }
                     }}
@@ -160,7 +168,7 @@ export default function ProcessosPage() {
                   </ActionIcon>
                   <ActionIcon
                     onClick={() =>
-                      router.push(`/processos/${p.Id}/editar`)
+                      router.push(`/processos/${p.id}/editar`)
                     }
                     gray
                   >

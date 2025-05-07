@@ -30,7 +30,6 @@ export default function EditarProcesso() {
   useEffect(() => {
     (async () => {
       try {
-        await fetchCurrentUser();
         if (typeof id === "string") {
           const data = await getProcessById(id);
           setProcesso(data);
@@ -53,12 +52,10 @@ export default function EditarProcesso() {
     if (!processo) return;
     setLoading(true);
     try {
-      await updateProcess(processo.Id, {
-        Titulo: processo.Titulo,
-        Descricao: processo.Descricao,
-        Status: processo.Status,
+      await updateProcess(processo.id, {
+        Status: processo.status
       });
-      router.push(`/processos/${processo.Id}`);
+      router.push(`/processos`);
     } catch (err) {
       console.error(err);
     } finally {
@@ -90,30 +87,10 @@ export default function EditarProcesso() {
       <form onSubmit={handleSubmit}>
         <Card>
           <InfoRow>
-            <Label>Título:</Label>
-            <input
-              name="Titulo"
-              value={processo.Titulo}
-              onChange={handleChange}
-              required
-            />
-          </InfoRow>
-
-          <InfoRow>
-            <Label>Descrição:</Label>
-            <input
-              name="Descricao"
-              value={processo.Descricao}
-              onChange={handleChange}
-              required
-            />
-          </InfoRow>
-
-          <InfoRow>
             <Label>Status:</Label>
             <select
-              name="Status"
-              value={processo.Status}
+              name="status"
+              value={processo.status}
               onChange={handleChange}
             >
               <option value="aberto">Aberto</option>

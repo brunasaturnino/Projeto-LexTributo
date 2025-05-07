@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import { createProcess } from "../../services/process";
-import { fetchCurrentUser } from "../../services/auth";
+import { fetchCurrentUser, getCurrentUserId, getToken } from "../../services/auth";
 import {
   Container,
   Title,
@@ -12,6 +12,7 @@ import {
 } from "./styles"; // ajuste conforme sua estrutura
 import { FiFilePlus, FiFileText, FiTrash2, FiArrowLeft } from "react-icons/fi";
 import { ProcessCreateDto } from "../../types/Process";
+import { uploadDocument } from "../../services/document";
 
 interface Documento {
   file: File;
@@ -21,7 +22,7 @@ interface Documento {
 export default function NovoProcesso() {
   const router = useRouter();
 
-  const [nome, setNome] = useState("");
+  const [numeroProcesso, setNumeroProcesso] = useState("");
   const [autor, setAutor] = useState("");
   const [reu, setReu] = useState("");
   const [tribunal, setTribunal] = useState("");
@@ -30,10 +31,10 @@ export default function NovoProcesso() {
   const [loading, setLoading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    // garante que o usuário está autenticado
-    fetchCurrentUser().catch(() => router.push("/login"));
-  }, []);
+  // useEffect(() => {
+  //   // garante que o usuário está autenticado
+  //   fetchCurrentUser().catch(() => router.push("/login"));
+  // }, []);
 
   const handleAddDocument = () => fileInputRef.current?.click();
 
@@ -55,14 +56,33 @@ export default function NovoProcesso() {
   const handleSalvar = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    
+    
     try {
       // monta DTO para a API (ajuste caso seu back aceite mais campos)
-      const dto: ProcessCreateDto = {
-        Titulo: nome,
-        Descricao: `Autor: ${autor}\nRéu: ${reu}\nTribunal: ${tribunal}\nStatus: ${status}`,
-      };
-      const created = await createProcess(dto);
-      router.push(`/processos/${created.Id}`);
+      const token = getToken()
+  
+      if (token){
+        const userId = getCurrentUserId(token)
+  
+        const dto: ProcessCreateDto = {
+          NumeroProcesso: numeroProcesso,
+          Nome: 'xxxxxxxxxxxx',
+          Autor: autor,
+          Reu: reu,
+          Tribunal: tribunal,
+          Status: status,
+          UserId: userId
+        };
+        
+        const created = await createProcess(dto);
+
+        for (const doc of documentos){
+          await uploadDocument(doc.file, created.id)
+        }
+
+        router.push(`/processos`);
+      }
     } catch (err: any) {
       console.error("Erro ao criar processo:", err);
       alert(err.response?.data?.title || "Falha ao salvar processo");
@@ -103,11 +123,11 @@ export default function NovoProcesso() {
       <form onSubmit={handleSalvar}>
         <Card>
           <InfoRow>
-            <Label>Nome:</Label>
+            <Label>Numero:</Label>
             <input
               type="text"
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
+              value={numeroProcesso}
+              onChange={(e) => setNumeroProcesso(e.target.value)}
               style={inputStyle}
               required
             />

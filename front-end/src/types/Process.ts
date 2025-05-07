@@ -1,19 +1,25 @@
 export interface Process {
-    Id: string;
-    Titulo: string;
-    Descricao: string;
-    CriadoEm: string;  // ISO date
-    Status: 'aberto' | 'em_andamento' | 'concluido';
+    id: string;
+    numeroProcesso: string;
+    nome: string;
+    autor: string;
+    reu: string;
+    tribunal: string;
+    status: string;
+    userId: string;
   }
   
   export interface ProcessCreateDto {
-    Titulo: string;
-    Descricao: string;
+    NumeroProcesso: string;
+    Nome: string;
+    Autor: string;
+    Reu: string;
+    Tribunal: string;
+    Status: string
+    UserId: string
   }
   
   export interface ProcessUpdateDto {
-    Titulo?: string;
-    Descricao?: string;
-    Status?: Process['Status'];
+    Status: string
   }
   

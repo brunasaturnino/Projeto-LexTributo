@@ -1,8 +1,8 @@
 export interface Document {
-    Id: string;
-    NomeArquivo: string;
-    CaminhoArquivo: string;
-    ProcessoId: string;
+    id: string;
+    nomeArquivo: string;
+    caminhoArquivo: string;
+    processoId: string;
   }
   
   // para enviar via FormData

@@ -33,7 +33,6 @@ export default function DetalhesProcesso() {
       if (!id) return;
       try {
         // verifica autenticação
-        await fetchCurrentUser();
         // busca dados do processo
         const proc = await getProcessById(id as string);
         setProcesso(proc);
@@ -73,28 +72,29 @@ export default function DetalhesProcesso() {
 
       <Card>
         <SectionTitle>Informações do Processo</SectionTitle>
+
         <InfoRow>
-          <Label>ID:</Label>
-          <Value>{processo.Id}</Value>
+          <Label>Número:</Label>
+          <Value>{processo.numeroProcesso}</Value>
         </InfoRow>
         <InfoRow>
-          <Label>Título:</Label>
-          <Value>{processo.Titulo}</Value>
+          <Label>Autor:</Label>
+          <Value>{processo.autor}</Value>
         </InfoRow>
         <InfoRow>
-          <Label>Descrição:</Label>
-          <Value>{processo.Descricao}</Value>
+          <Label>Reu:</Label>
+          <Value>{processo.reu}</Value>
         </InfoRow>
         <InfoRow>
-          <Label>Criado em:</Label>
-          <Value>{new Date(processo.CriadoEm).toLocaleString()}</Value>
+          <Label>Tribunal:</Label>
+          <Value>{processo.tribunal}</Value>
         </InfoRow>
         <InfoRow>
           <Label>Status:</Label>
           <Value>
-            {processo.Status === 'aberto'
+            {processo.status === 'aberto'
               ? 'Aberto'
-              : processo.Status === 'em_andamento'
+              : processo.status === 'em_andamento'
               ? 'Em andamento'
               : 'Concluído'}
           </Value>
@@ -108,8 +108,8 @@ export default function DetalhesProcesso() {
             {documentos.map((doc, idx) => (
               <DocumentItem key={idx}>
                 <DocumentIcon size={18} />
-                <a href={doc.CaminhoArquivo} target="_blank" rel="noopener noreferrer">
-                  {doc.NomeArquivo}
+                <a href={doc.caminhoArquivo} target="_blank" rel="noopener noreferrer">
+                  {doc.nomeArquivo}
                 </a>
               </DocumentItem>
             ))}

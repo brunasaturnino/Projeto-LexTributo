@@ -10,13 +10,15 @@ export async function getDocumentsByProcessId(
   return data;
 }
 
-export async function uploadDocument(dto: CreateDocumentDto): Promise<Document> {
-  const form = new FormData();
-  form.append('Arquivo', dto.Arquivo);
-  form.append('ProcessoId', dto.ProcessoId);
-  const { data } = await api.post<Document>(ENDPOINT, form, {
+export async function uploadDocument(file: File, processoId: string): Promise<Document> {
+  const formData = new FormData();
+  formData.append('Arquivo', file);
+  formData.append('ProcessoId', processoId);
+
+  const { data } = await api.post('/documentos', formData, {
     headers: { 'Content-Type': 'multipart/form-data' },
   });
+
   return data;
 }
 

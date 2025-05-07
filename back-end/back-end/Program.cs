@@ -64,6 +64,8 @@ if (app.Environment.IsDevelopment())
     app.MapScalarApiReference();
 }
 
+app.UseStaticFiles();
+
 app.UseHttpsRedirection();
 
 // 6.1) Habilita CORS
