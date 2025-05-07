@@ -120,11 +120,11 @@ export default function ProcessosPage() {
             <tr>
               <th>
                 <SortButton onClick={() => setOrdemAsc(!ordemAsc)}>
-                  Numero {ordemAsc ? <FiChevronUp /> : <FiChevronDown />}
+                  Número do Processo {ordemAsc ? <FiChevronUp /> : <FiChevronDown />}
                 </SortButton>
               </th>
               <th>Autor</th>
-              <th>Reu</th>
+              <th>Réu</th>
               <th>Tribunal</th>
               <th>Status</th>
               <th style={{ textAlign: "right" }}>Ações</th>
