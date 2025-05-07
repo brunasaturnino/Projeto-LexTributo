@@ -39,6 +39,7 @@ export default function EditarProcesso() {
       }
     })();
   }, [id]);
+  
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -67,7 +68,15 @@ export default function EditarProcesso() {
 
   return (
     <Container>
-      <Header>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          gap: "0.5rem",
+          marginBottom: "1.5rem",
+        }}
+      >
         <button
           type="button"
           onClick={() => router.back()}
@@ -76,37 +85,59 @@ export default function EditarProcesso() {
             border: "none",
             cursor: "pointer",
             padding: 0,
+            display: "flex",
+            alignItems: "center",
           }}
           title="Voltar"
         >
           <FiArrowLeft size={22} color="#e60000" />
         </button>
-        <Title>Editar Processo</Title>
-      </Header>
+        <Title style={{ margin: 0 }}>Editar Processo</Title>
+      </div>
+  
+   
 
       <form onSubmit={handleSubmit}>
         <Card>
-          <InfoRow>
-            <Label>Status:</Label>
-            <select
-              name="status"
-              value={processo.status}
-              onChange={handleChange}
-            >
-              <option value="aberto">Aberto</option>
-              <option value="em_andamento">Em andamento</option>
-              <option value="concluido">Concluído</option>
-            </select>
-          </InfoRow>
+        <InfoRow>
+      <Label>Status:</Label>
+      <select
+        name="status"
+        value={processo.status}
+        onChange={handleChange}
+        style={inputStyle}
+        required
+      >
+        <option value="aberto">Aberto</option>
+        <option value="em_andamento">Em andamento</option>
+        <option value="concluido">Concluído</option>
+      </select>
+    </InfoRow>
 
-          {/* Se tiver documentos: carregar lista via API e exibir aqui */}
-          {/* Mantém a lógica de upload local se desejar */}
-
-          <Button type="submit" disabled={loading}>
-            {loading ? "Salvando..." : "Salvar"}
-          </Button>
-        </Card>
-      </form>
+    <button type="submit" style={buttonStyle} disabled={loading}>
+      {loading ? "Salvando..." : "Salvar"}
+    </button>
+  </Card>
+</form>
     </Container>
   );
 }
+
+
+const inputStyle: React.CSSProperties = {
+  flex: 1,
+  padding: "0.5rem",
+  fontSize: "1rem",
+  border: "1px solid #ccc",
+  borderRadius: "6px",
+};
+
+const buttonStyle: React.CSSProperties = {
+  marginTop: "2rem",
+  padding: "0.7rem 1.5rem",
+  backgroundColor: "#e60000",
+  color: "white",
+  border: "none",
+  borderRadius: "6px",
+  cursor: "pointer",
+};

@@ -123,7 +123,7 @@ export default function NovoProcesso() {
       <form onSubmit={handleSalvar}>
         <Card>
           <InfoRow>
-            <Label>Numero:</Label>
+            <Label>Nº Processo:</Label>
             <input
               type="text"
               value={numeroProcesso}

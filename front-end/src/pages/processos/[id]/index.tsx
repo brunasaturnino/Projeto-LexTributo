@@ -48,30 +48,49 @@ export default function DetalhesProcesso() {
   if (!processo) {
     return <p style={{ padding: '2rem' }}>Carregando detalhes do processo...</p>;
   }
+  
+
+  if (!processo) {
+    return <p style={{ padding: '2rem' }}>Carregando detalhes do processo...</p>;
+  }
 
   return (
     <Container>
-      <Header>
-        <button
-          type="button"
-          onClick={() => router.back()}
-          style={{
-            background: 'transparent',
-            border: 'none',
-            cursor: 'pointer',
-            padding: 0,
-            display: 'flex',
-            alignItems: 'center',
-          }}
-          title="Voltar"
-        >
-          <FiArrowLeft size={22} color="#e60000" />
-        </button>
-        <Title>Detalhes do Processo</Title>
-      </Header>
+  
+      <div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+    gap: "0.5rem",
+    marginBottom: "1.5rem",
+  }}
+>
+  <button
+    type="button"
+    onClick={() => router.back()}
+    style={{
+      background: "transparent",
+      border: "none",
+      cursor: "pointer",
+      padding: 0,
+      display: "flex",
+      alignItems: "center",
+    }}
+    title="Voltar"
+  >
+    <FiArrowLeft size={22} color="#e60000" />
+  </button>
+  <Title style={{ margin: 0 }}>Detalhes do Processo</Title>
+</div>
+
+     
 
       <Card>
-        <SectionTitle>Informações do Processo</SectionTitle>
+      <SectionTitle style={{ marginBottom: "1.5rem" }}>
+  Informações do Processo
+</SectionTitle>
+
 
         <InfoRow>
           <Label>Número:</Label>
@@ -102,7 +121,10 @@ export default function DetalhesProcesso() {
       </Card>
 
       <Card>
-        <SectionTitle>Documentos</SectionTitle>
+      <SectionTitle style={{ marginBottom: "1.5rem" }}>
+  Documentos
+</SectionTitle>
+
         {documentos.length > 0 ? (
           <DocumentList>
             {documentos.map((doc, idx) => (
