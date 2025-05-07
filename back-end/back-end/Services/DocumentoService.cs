@@ -38,7 +38,7 @@ namespace back_end.Services
             {
                 Id = Guid.NewGuid(),
                 NomeArquivo = dto.Arquivo.FileName,
-                CaminhoArquivo = $"/documentos/{fileName}",
+                CaminhoArquivo = $"http://localhost:5247/documentos/{fileName}",
                 ProcessoId = dto.ProcessoId
             };
 

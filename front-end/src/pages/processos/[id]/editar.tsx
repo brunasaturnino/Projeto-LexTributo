@@ -1,101 +1,112 @@
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { getProcessById, updateProcess } from "../../../services/process";
+import { fetchCurrentUser } from "../../../services/auth";
 import { Button } from "../../../components/Button";
-import { Container, Title, Form, Label, Header, Input } from "../styles";
-
-interface Processo {
-  id: string;
-  nome: string;
-  autor: string;
-  reu: string;
-  tribunal: string;
-  status: string;
-}
+import {
+  Container,
+  Title,
+  Card,
+  InfoRow,
+  Label,
+  Header,
+  DocumentButton,
+} from "../styles"; 
+import {
+  FiFilePlus,
+  FiFileText,
+  FiTrash2,
+  FiArrowLeft,
+} from "react-icons/fi";
+import { Process } from "../../../types/Process";
 
 export default function EditarProcesso() {
   const router = useRouter();
   const { id } = router.query;
 
-  const [processo, setProcesso] = useState<Processo | null>(null);
+  const [processo, setProcesso] = useState<Process | null>(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!id) return;
-
-    const listaDeProcessos: Processo[] = [
-      {
-        id: "1",
-        nome: "Processo 1",
-        autor: "Empresa X",
-        reu: "Fazenda Pública",
-        tribunal: "TJ-SP",
-        status: "Em andamento",
-      },
-      {
-        id: "2",
-        nome: "Processo 2",
-        autor: "João da Silva",
-        reu: "União Federal",
-        tribunal: "TRF-1",
-        status: "Concluído",
-      },
-      {
-        id: "3",
-        nome: "Processo 3",
-        autor: "Maria Oliveira",
-        reu: "Estado de Minas Gerais",
-        tribunal: "TJ-MG",
-        status: "Pendente",
-      },
-      {
-        id: "4",
-        nome: "Processo 4",
-        autor: "Empresa Z",
-        reu: "Fazenda Pública",
-        tribunal: "TJ-RS",
-        status: "Arquivado",
-      },
-    ];
-
-    const encontrado = listaDeProcessos.find((p) => p.id === id);
-    setProcesso(encontrado || null);
+    (async () => {
+      try {
+        if (typeof id === "string") {
+          const data = await getProcessById(id);
+          setProcesso(data);
+        }
+      } catch {
+        router.push("/login");
+      }
+    })();
   }, [id]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     if (!processo) return;
     setProcesso({ ...processo, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Processo atualizado: ${JSON.stringify(processo, null, 2)}`);
-    router.push(`/processos/${processo?.id}`);
+    if (!processo) return;
+    setLoading(true);
+    try {
+      await updateProcess(processo.id, {
+        Status: processo.status
+      });
+      router.push(`/processos`);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (!processo) return <p style={{ padding: "2rem" }}>Carregando...</p>;
 
   return (
     <Container>
-        <Header>
-      <Title>Editar Processo</Title>
+      <Header>
+        <button
+          type="button"
+          onClick={() => router.back()}
+          style={{
+            background: "transparent",
+            border: "none",
+            cursor: "pointer",
+            padding: 0,
+          }}
+          title="Voltar"
+        >
+          <FiArrowLeft size={22} color="#e60000" />
+        </button>
+        <Title>Editar Processo</Title>
       </Header>
-      <Form onSubmit={handleSubmit}>
-        <Label>Nome:</Label>
-        <Input name="nome" value={processo.nome} onChange={handleChange} />
 
-        <Label>Autor:</Label>
-        <Input name="autor" value={processo.autor} onChange={handleChange} />
+      <form onSubmit={handleSubmit}>
+        <Card>
+          <InfoRow>
+            <Label>Status:</Label>
+            <select
+              name="status"
+              value={processo.status}
+              onChange={handleChange}
+            >
+              <option value="aberto">Aberto</option>
+              <option value="em_andamento">Em andamento</option>
+              <option value="concluido">Concluído</option>
+            </select>
+          </InfoRow>
 
-        <Label>Réu:</Label>
-        <Input name="reu" value={processo.reu} onChange={handleChange} />
+          {/* Se tiver documentos: carregar lista via API e exibir aqui */}
+          {/* Mantém a lógica de upload local se desejar */}
 
-        <Label>Tribunal:</Label>
-        <Input name="tribunal" value={processo.tribunal} onChange={handleChange} />
-
-        <Label>Status:</Label>
-        <Input name="status" value={processo.status} onChange={handleChange} />
-
-        <Button>Salvar Alterações</Button>
-      </Form>
+          <Button type="submit" disabled={loading}>
+            {loading ? "Salvando..." : "Salvar"}
+          </Button>
+        </Card>
+      </form>
     </Container>
   );
 }

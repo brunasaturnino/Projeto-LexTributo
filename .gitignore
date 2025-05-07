@@ -1,22 +1,80 @@
-# Diretórios gerados
+# -------------------------
+# .NET / Visual Studio
+# -------------------------
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.ilk
+*.log
+*.pdb
+*.db
+appsettings.Development.json
+secrets.json
+
+# Rider
+.idea/
+
+# Publishes
+publish/
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# -------------------------
+# Front‑end (Next.js)
+# -------------------------
+# dependencies
+node_modules/
+
+# build outputs
 .next/
 out/
-node_modules/
-build/
 dist/
+build/
 
-# Arquivos de cache
+# local env files
+.env.local
+.env.*.local
+
+# misc
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Binários e arquivos compilados do .NET
+*.dll
+*.exe
+*.cache
+*.json~            # backups temporários
+
+# Build outputs comuns
+**/bin/
+**/obj/
+**/publish/
+**/debug/
+*.deps.json
+
+# Visual Studio Code settings (se quiser manter localmente)
+.vscode/
+
+# Frontend artifacts
 *.log
-*.gz
-.cache/
+npm-debug.log*
+yarn.lock
+pnpm-lock.yaml
+package-lock.json
+coverage/
 
-# Sistema operacional
+# Banco de dados local SQLite (se houver)
+*.db
+*.sqlite
+
+# Arquivos de sistema
 .DS_Store
 Thumbs.db
-
-# Ambiente
-.env
-.env.local
-/.vs
-/back-end/.vs/back-end/FileContentIndex
-/back-end/back-end/obj/Release/net8.0

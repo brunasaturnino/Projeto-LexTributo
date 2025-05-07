@@ -1,3 +1,5 @@
+// front-end/src/pages/processos/index.tsx
+
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import {
@@ -14,7 +16,7 @@ import {
   TableHeaderRow,
   StatusFilter,
   StatusOption,
-  CardLogout
+  CardLogout,
 } from "./styles";
 import {
   FiTrash2,
@@ -25,64 +27,56 @@ import {
   FiChevronDown,
   FiLogOut,
 } from "react-icons/fi";
-
-interface Processo {
-  id: string;
-  nome: string;
-  status: string;
-}
+import { getProcesses, deleteProcess } from "../../services/process";
+import { fetchCurrentUser, getCurrentUserId } from "../../services/auth";
+import { Process } from "../../types/Process";
+import { jwtDecode } from "jwt-decode";
 
 export default function ProcessosPage() {
-  const [processos, setProcessos] = useState<Processo[]>([]);
+  const [processos, setProcessos] = useState<Process[]>([]);
   const [busca, setBusca] = useState("");
-  const [colunaOrdenada, setColunaOrdenada] = useState<"nome">("nome"); // agora só nome
-  const [ordemAscendente, setOrdemAscendente] = useState(true);
-  const [filtroStatus, setFiltroStatus] = useState<string>(""); // "" = todos
+  const [ordemAsc, setOrdemAsc] = useState(true);
+  const [filtroStatus, setFiltroStatus] = useState<string>("");
   const router = useRouter();
 
   useEffect(() => {
-    setProcessos([
-      { id: "1", nome: "Processo 1", status: "Em andamento" },
-      { id: "2", nome: "Processo 2", status: "Concluído" },
-      { id: "3", nome: "Processo 3", status: "Pendente" },
-      { id: "4", nome: "Processo 4", status: "Arquivado" },
-    ]);
+    (async () => {
+      try {
+        // Busca os processos do usuário
+        const lista = await getProcesses();
+        if (lista){
+          setProcessos(lista);
+        }
+      } catch (err: any) {
+        // Se não estiver logado ou der erro de API, manda pro login
+        console.log(err.response.data)
+      }
+    })();
   }, []);
 
-  // Ordenação apenas por nome
-  const handleOrdenarNome = () => {
-    setOrdemAscendente(!ordemAscendente);
-  };
-
-  const processosFiltrados = processos
-    // filtrar por nome
-    .filter(p => p.nome.toLowerCase().includes(busca.toLowerCase()))
-    // filtrar por status
+  const filtered = processos
+    .filter(p => p.nome?.toLowerCase().includes(busca.toLowerCase()))
     .filter(p => !filtroStatus || p.status === filtroStatus)
-    // ordenar por nome
     .sort((a, b) =>
-      ordemAscendente
+      ordemAsc
         ? a.nome.localeCompare(b.nome)
         : b.nome.localeCompare(a.nome)
     );
 
-  const todosStatuses = ["", "Em andamento", "Pendente", "Concluído", "Arquivado"];
 
-  function handleLogout() {
-    // Exemplo simples: limpe tokens/sessão aqui se usar autenticação real
-    // localStorage.removeItem('token');
-    // window.location.href = "/login";
-    router.push("/login"); // só para simular logout agora
-  }
+  const allStatuses = ["", "aberto", "em_andamento", "concluido"];
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    router.push("/login");
+  };
 
   return (
     <Container>
       <Header>
         <Title>Processos</Title>
         <CardLogout onClick={handleLogout}>
-          <FiLogOut size={15} />
-          LogOut
+          <FiLogOut size={15} /> Logout
         </CardLogout>
       </Header>
 
@@ -98,20 +92,25 @@ export default function ProcessosPage() {
               onChange={e => setBusca(e.target.value)}
             />
           </SearchWrapper>
-          <AddButton onClick={() => alert("Novo processo")}>
+          <AddButton onClick={() => router.push("/processos/novo")}>
             <FiPlus />
           </AddButton>
         </TableHeaderRow>
 
-        {/* filtro por status */}
         <StatusFilter>
-          {todosStatuses.map(status => (
+          {allStatuses.map(status => (
             <StatusOption
               key={status || "todos"}
               active={filtroStatus === status}
               onClick={() => setFiltroStatus(status)}
             >
-              {status || "Todos"}
+              {status === ""
+                ? "Todos"
+                : status === "aberto"
+                ? "Aberto"
+                : status === "em_andamento"
+                ? "Em andamento"
+                : "Concluído"}
             </StatusOption>
           ))}
         </StatusFilter>
@@ -120,30 +119,57 @@ export default function ProcessosPage() {
           <thead>
             <tr>
               <th>
-                <SortButton onClick={handleOrdenarNome}>
-                  Nome {ordemAscendente ? <FiChevronUp /> : <FiChevronDown />}
+                <SortButton onClick={() => setOrdemAsc(!ordemAsc)}>
+                  Numero {ordemAsc ? <FiChevronUp /> : <FiChevronDown />}
                 </SortButton>
               </th>
+              <th>Autor</th>
+              <th>Reu</th>
+              <th>Tribunal</th>
               <th>Status</th>
               <th style={{ textAlign: "right" }}>Ações</th>
             </tr>
           </thead>
           <tbody>
-            {processosFiltrados.map(p => (
+            {processos.map(p => (
               <tr key={p.id}>
                 <td
                   onClick={() => router.push(`/processos/${p.id}`)}
                   style={{ cursor: "pointer", fontWeight: 500 }}
                 >
-                  {p.nome}
+                  {p.numeroProcesso}
                 </td>
-                <td>{p.status}</td>
+                <td>{p.autor}</td>
+                <td>{p.reu}</td>
+                <td>{p.tribunal}</td>
+                <td>
+                  {p.status === "aberto"
+                    ? "Aberto"
+                    : p.status === "em_andamento"
+                    ? "Em andamento"
+                    : "Concluído"}
+                </td>
                 <td style={{ textAlign: "right" }}>
-                  <ActionIcon onClick={() => alert(`Excluir ${p.nome}`)}>
+                  <ActionIcon
+                    onClick={async () => {
+                      if (
+                        window.confirm(
+                          `Excluir o processo “${p.numeroProcesso}”?`
+                        )
+                      ) {
+                        await deleteProcess(p.id);
+                        setProcessos(prev =>
+                          prev.filter(x => x.id !== p.id)
+                        );
+                      }
+                    }}
+                  >
                     <FiTrash2 />
                   </ActionIcon>
                   <ActionIcon
-                    onClick={() => router.push(`/processos/${p.id}/editar`)}
+                    onClick={() =>
+                      router.push(`/processos/${p.id}/editar`)
+                    }
                     gray
                   >
                     <FiEdit2 />
