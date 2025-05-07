@@ -9,9 +9,26 @@ documentos com upload e busca inteligente, cálculo automático de tributos como
 CSLL, além de ferramentas de colaboração entre advogados por meio do compartilhamento de 
 processos e anotações. 
 
-   A plataforma será desenvolvida utilizando as tecnologias TypeScript, .NET e Next.js, visando uma arquitetura moderna, escalável e eficiente.
+# Pilha de tecnologias
+   Front-End: Next.js (React), TypeScript(TSX), styled-components, react-icons, Axios .
+   Back-End: C#, ASP.NET Core, JWT, SQL Server.
+   
+# Versionamento
+  Git e GitHub
 
-Membros: ⁠Bruna Saturnino de Carvalho - 2023001921 (FrontEnd)
-Ezequias Kluyvert de Oliveira Lemos - 2023038523 (BackEnd)
+# Backlog do produto
+- Navegação no sistema  
+- Gerenciamento de processos (CRUD)  
+- Gerenciamento de documentos (CRUD)  
+- Recebimento de alertas de vencimento  
+- Agendamento de reuniões  
+- Cálculo de tributos  
+- Compartilhamento de documentos com clientes ou colegas  
+- Cadastro no sistema  
+- Login no sistema  
+- Aplicação de filtros nos processos
+
+# Pápeis do time
+⁠Bruna Saturnino de Carvalho - 2023001921 (FrontEnd)
 Gustavo Amaral Bernardino - 2021432674 (BackEnd)
 ⁠Rafael Araújo Magesty - 2022423415 ( FrontEnd)
