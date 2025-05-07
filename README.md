@@ -10,8 +10,8 @@ CSLL, além de ferramentas de colaboração entre advogados por meio do comparti
 processos e anotações. 
 
 # Pilha de tecnologias
-   Front-End: Next.js (React), TypeScript(TSX), styled-components, react-icons, Axios
-   Back-End: C#, ASP.NET Core, JWT, SQL Server
+- Front-End: Next.js (React), TypeScript(TSX), styled-components, react-icons, Axios
+- Back-End: C#, ASP.NET Core, JWT, SQL Server
    
 # Versionamento
   Git e GitHub
@@ -29,6 +29,6 @@ processos e anotações.
 - Aplicação de filtros nos processos
 
 # Pápeis do time
-⁠-Bruna Saturnino de Carvalho - 2023001921 (FrontEnd)
--⁠Rafael Araújo Magesty - 2022423415 (FrontEnd)
--Gustavo Amaral Bernardino - 2021432674 (BackEnd)
+⁠- Bruna Saturnino de Carvalho - 2023001921 (FrontEnd)
+- ⁠Rafael Araújo Magesty - 2022423415 (FrontEnd)
+- Gustavo Amaral Bernardino - 2021432674 (BackEnd)
