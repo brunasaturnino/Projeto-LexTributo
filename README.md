@@ -30,5 +30,5 @@ processos e anotações.
 
 # Pápeis do time
 - Bruna Saturnino de Carvalho — 2023001921 (Front-End)  
-- Rafael Araújo Magesty — 2022423415 — (Front-End)  
-- Gustavo Amaral Bernardino — 2021432674 — (Back-End)
+- Rafael Araújo Magesty — 2022423415 (Front-End)  
+- Gustavo Amaral Bernardino — 2021432674 (Back-End)
